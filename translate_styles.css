@@ -1,0 +1,59 @@
+/* Google Translate in Navbar */
+.nav-item-translate {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+#google_translate_element {
+    display: inline-block;
+}
+
+/* Style the Google Translate Gadget to match Navbar */
+.goog-te-gadget-simple {
+    background-color: transparent !important;
+    border: 1px solid var(--card-border) !important;
+    padding: 4px 8px !important;
+    border-radius: 20px !important;
+    font-size: 0.9rem !important;
+    line-height: 2rem !important;
+    display: inline-block;
+    cursor: pointer;
+    zoom: 1;
+    transition: all 0.3s ease;
+}
+
+.goog-te-gadget-simple:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: var(--accent) !important;
+}
+
+/* Hide the Google Icon usually found in the simple layout if desired, or keep it */
+.goog-te-gadget-icon {
+    display: none !important;
+}
+
+.goog-te-menu-value {
+    color: var(--text-primary) !important;
+}
+
+.goog-te-menu-value span {
+    color: var(--text-primary) !important;
+    border-left: none !important;
+}
+
+/* Fix dropdown positioning and z-index */
+.goog-te-menu-frame {
+    z-index: 2147483647 !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5) !important;
+    border-radius: 10px !important;
+}
+
+/* Ensure mobile menu accommodates the translate button */
+@media (max-width: 768px) {
+    .nav-item-translate {
+        margin: 1rem 0;
+        justify-content: center;
+        width: 100%;
+    }
+}
