@@ -2,92 +2,162 @@
 const portfolioData = {
     experience: [
         {
-            title: "Senior Technology Architect",
-            company: "Tech Innovations Corp",
-            period: "2020 - Present",
-            description: "Leading digital transformation initiatives, architecting microservices platforms, and implementing AI-driven solutions for enterprise clients.",
-            achievements: [
-                "Architected cloud-native platforms serving 100K+ users",
-                "Led team of 15+ developers across multiple projects",
-                "Reduced infrastructure costs by 40% through optimization"
-            ]
-        },
-        {
-            title: "Lead Full-Stack Developer",
-            company: "Digital Solutions Ltd",
-            period: "2016 - 2020",
-            description: "Spearheaded development of scalable web applications, mentored junior developers, and established coding standards and best practices.",
-            achievements: [
-                "Built 20+ production applications",
-                "Mentored 25+ junior developers",
-                "Established CI/CD pipelines reducing deployment time by 70%"
-            ]
-        },
-        {
-            title: "Senior Software Engineer",
-            company: "Innovation Systems",
-            period: "2012 - 2016",
-            description: "Developed enterprise-grade applications, optimized database performance, and implemented automated testing frameworks.",
-            achievements: [
-                "Improved application performance by 300%",
-                "Implemented automated testing reducing bugs by 60%",
-                "Led migration to modern tech stack"
-            ]
-        },
-        {
             title: "Software Developer",
-            company: "StartupTech",
-            period: "2008 - 2012",
-            description: "Built foundational skills in web development, database design, and agile methodologies while contributing to multiple product launches.",
+            company: "PPFAS",
+            period: "October 2024 - Present",
+            description: "Building business-critical websites, portals, payments, and internal systems at PPFAS using Laravel, React, PHP, WordPress, AWS, and CI/CD-driven deployment workflows, with added design support through Figma and Photoshop.",
             achievements: [
-                "Contributed to 5 successful product launches",
-                "Developed core features used by 10K+ users",
-                "Mastered full-stack development fundamentals"
+                "Built and launched gift.ppfas.com and wealth.ppfas.com",
+                "Created a management portal for amc.ppfas.com, including backend-managed website workflows, job portal features, and related internal portals",
+                "Saved 20+ lakh in fixed costs by building static pages and management portals that reduced dependency on the tech team",
+                "Saved 10+ lakh in annual recurring cost by building QR scanning and door list portals",
+                "Built the payment gateway flow for PPFAS Gift, including international payment support, plus a compliance and QC backend portal for uploads and staff management",
+                "Designed email templates and website layouts in Figma and Photoshop before implementation"
+            ]
+        },
+        {
+            title: "Professional Software Developer",
+            company: "Akbar Travels",
+            period: "Until September 2024",
+            description: "Professional software developer with a strong web development focus, centered on JavaScript and practical full-stack delivery across React, Express, Node.js, MongoDB, MySQL, Firebase, and Java.",
+            achievements: [
+                "Developed and maintained 10+ web applications using the MERN stack",
+                "Completed 15+ projects across web, real-time, data, and social-impact use cases",
+                "Built a strong self-learning foundation with JavaScript as the core skill"
+            ]
+        },
+        {
+            title: "Data Analyst and Billing",
+            company: "Mansha Distributors LLP",
+            period: "06/2021 - 05/2022",
+            description: "Handled pricing, billing, and sales support analysis to improve business decisions and operational performance.",
+            achievements: [
+                "Implemented pricing strategies that increased net profit by 150%",
+                "Improved profit from INR 100,000 to INR 250,000",
+                "Managed product suggestions and sales-force optimization"
+            ]
+        },
+        {
+            title: "Android Developer",
+            company: "StayVibez",
+            period: "10/2020 - 02/2021",
+            description: "Worked in a small delivery team to build an Android application under tight timelines while balancing client needs and feature priorities.",
+            achievements: [
+                "Led a team of 4 developers on the Android app delivery",
+                "Contributed to a 15% increase in client referrals",
+                "Improved teamwork, delivery focus, and client communication"
+            ]
+        },
+        {
+            title: "Technology Associate",
+            company: "Student and Project Roles",
+            period: "Earlier Experience",
+            description: "Built a foundation across software development, analytics, collaboration, and leadership through academic and project-based work.",
+            achievements: [
+                "Completed 15+ academic and practical projects",
+                "Developed leadership through fest, NSS, and coaching responsibilities",
+                "Built strong communication and presentation skills"
             ]
         }
     ],
 
     projects: [
         {
-            title: "Enterprise Cloud Platform 1",
-            description: "Architected and developed a comprehensive cloud-native platform serving 50,000+ users with microservices architecture and real-time analytics.",
-            fullDescription: "This enterprise-grade platform revolutionized how our client managed their digital operations. Built with microservices architecture, it provides real-time analytics, automated scaling, and comprehensive monitoring. The platform handles millions of transactions daily with 99.9% uptime.",
-            technologies: ["React", "Node.js", "AWS", "Docker", "Kubernetes"],
-            category: "Enterprise",
-            link: "#",
+            title: "Library Management System",
+            description: "Web application to manage a library inventory with a simple management workflow.",
+            fullDescription: "Library Management System is a web application focused on organizing and managing a library's inventory efficiently. It reflects practical CRUD-oriented application development with a clean workflow-driven interface.",
+            technologies: ["HTML", "CSS", "JavaScript", "Web App"],
+            category: "Management System",
+            link: "https://josejoy2216.github.io/library-management-system/",
             features: [
-                "Real-time analytics dashboard",
-                "Automated scaling and monitoring",
-                "Multi-tenant architecture",
-                "Advanced security protocols"
+                "Library inventory management workflow",
+                "Browser-based interface",
+                "Practical CRUD-style interaction",
+                "Project focused on usability and organization"
             ]
         },
         {
-            title: "AI-Powered Analytics Dashboard 1",
-            description: "Built an intelligent analytics platform with machine learning capabilities, providing actionable insights and predictive analytics for business operations.",
-            fullDescription: "Revolutionary analytics platform that uses machine learning to predict business trends and provide actionable insights. Features advanced data visualization, natural language querying, and automated report generation.",
-            technologies: ["Python", "TensorFlow", "Vue.js", "PostgreSQL"],
-            category: "AI/ML",
-            link: "#",
+            title: "Movie Recommendation System",
+            description: "Content-based movie recommender with similar-title discovery and sentiment analysis on user reviews.",
+            fullDescription: "Movie Recommendation System combines recommendation logic with sentiment analysis to help users discover similar movies and evaluate audience response. It highlights practical data-driven development beyond standard CRUD applications.",
+            technologies: ["Python", "Recommendation Engine", "Sentiment Analysis", "Web App"],
+            category: "Data Project",
+            link: "https://josejoy2216.github.io/Movie-Recommendation-System-with-Sentiment-Analysis",
             features: [
-                "Predictive analytics engine",
-                "Natural language queries",
-                "Automated insight generation",
-                "Custom visualization builder"
+                "Content-based recommendation flow",
+                "Sentiment analysis on reviews",
+                "Interactive discovery experience",
+                "Applied Python and data-processing logic"
             ]
         },
         {
-            title: "Mobile-First E-Commerce Solution 1",
-            description: "Developed a high-performance e-commerce platform with advanced payment integration, inventory management, and seamless mobile experience.",
-            fullDescription: "Complete e-commerce solution optimized for mobile-first experiences. Includes advanced features like AR product visualization, personalized recommendations, and seamless checkout processes.",
-            technologies: ["React Native", "Express.js", "MongoDB", "Stripe"],
+            title: "UNO - Game",
+            description: "Backend server for a multiplayer UNO card game built with Node.js, Express, and MongoDB.",
+            fullDescription: "UNO - Game focuses on backend multiplayer logic using Node.js, Express, and MongoDB. It demonstrates server-side game coordination, state handling, and full-stack readiness for interactive products.",
+            technologies: ["Node.js", "Express", "MongoDB", "Game Backend"],
+            category: "Backend System",
+            link: "https://github.com/josejoy2216/UNO-GAME",
+            features: [
+                "Multiplayer backend architecture",
+                "Server-side game state handling",
+                "Node and Express API implementation",
+                "MongoDB-powered persistence"
+            ]
+        },
+        {
+            title: "BookNook",
+            description: "MERN e-commerce application for books with browsing, product details, purchasing flow, admin panel, and Firebase authentication.",
+            fullDescription: "BookNook is a MERN e-commerce project built around books and user purchase flow. It includes user browsing, product exploration, admin functionality, and Firebase authentication to support a more complete real-world application structure.",
+            technologies: ["React", "Node.js", "MongoDB", "Firebase"],
             category: "E-Commerce",
-            link: "#",
+            link: "https://github.com/josejoy2216/Ecommerce",
             features: [
-                "AR product visualization",
-                "Personalized recommendations",
-                "Multi-payment gateway integration",
-                "Real-time inventory tracking"
+                "Book browsing and product details",
+                "Purchase flow and admin panel",
+                "Firebase authentication",
+                "MERN-based application structure"
+            ]
+        },
+        {
+            title: "Mafia - Game",
+            description: "Real-time multiplayer Mafia game with cross-device join flow, unique game code, role assignment, night and day phases, voting, and win conditions.",
+            fullDescription: "Mafia - Game is a real-time multiplayer experience focused on coordinated session flow, role assignment, voting mechanics, and cross-device participation. It reflects strong JavaScript-centered problem solving in interactive application design.",
+            technologies: ["React", "Node.js", "MongoDB", "Real-Time Logic"],
+            category: "Real-Time App",
+            link: "https://github.com/josejoy2216/mafia/",
+            features: [
+                "Cross-device room join with unique game code",
+                "Role assignment and night/day phases",
+                "Voting and win-condition logic",
+                "Real-time multiplayer coordination"
+            ]
+        },
+        {
+            title: "Taskify",
+            description: "To-do list application with add, complete, edit, delete, and search features.",
+            fullDescription: "Taskify is a clean productivity-oriented to-do list app built with HTML, CSS, and JavaScript. It focuses on usability, state changes, and day-to-day interaction patterns common in frontend development.",
+            technologies: ["HTML", "CSS", "JavaScript"],
+            category: "Productivity App",
+            link: "https://josejoy2216.github.io/Taskify/",
+            features: [
+                "Add and manage tasks",
+                "Edit, complete, and delete actions",
+                "Search functionality",
+                "Clean frontend-focused implementation"
+            ]
+        },
+        {
+            title: "Portfolio - vCard",
+            description: "Fully responsive personal portfolio website built with HTML, CSS, and JavaScript.",
+            fullDescription: "Portfolio - vCard is a responsive personal portfolio project that showcases profile, skills, projects, and contact information in a compact presentation format. It demonstrates frontend design and implementation capability.",
+            technologies: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+            category: "Portfolio",
+            link: "https://josejoy2216.github.io/vCard-Personal-Portfolio/",
+            features: [
+                "Responsive portfolio layout",
+                "Profile, skills, and project showcase",
+                "Frontend implementation with vanilla web stack",
+                "Design-focused personal branding"
             ]
         }
     ],
@@ -122,6 +192,8 @@ const portfolioData = {
         }
     ]
 };
+
+const WEB3FORMS_ACCESS_KEY = 'b32e8fe7-712e-401a-820b-9b5b09b93e59';
 
 // ==================== RENDERING FUNCTIONS ====================
 
@@ -209,7 +281,7 @@ function renderProjects() {
                                     ${project.features.map(feature => `<li>${feature}</li>`).join('')}
                                 </ul>
                                 <div style="display: flex; gap: 1rem;">
-                                    <button class="btn-outline" onclick="window.open('${project.link}', '_blank')">View Project</button>
+                                    <button class="btn-outline" onclick="window.open('${project.link}', '_blank', 'noopener')">View Project</button>
                                     <button class="btn-outline collapse-btn">Show Less</button>
                                 </div>
                             </div>
@@ -371,24 +443,58 @@ function attachEventListeners() {
 
 function handleContactSubmission(e) {
     e.preventDefault();
-    
-    const submitBtn = e.target.querySelector('button[type="submit"]');
+
+    const form = e.target;
+    const submitBtn = form.querySelector('button[type="submit"]');
     const originalText = submitBtn.textContent;
-    
+    let result = form.querySelector('.form-result');
+
+    if (!result) {
+        result = document.createElement('div');
+        result.className = 'form-result';
+        result.style.marginTop = '1rem';
+        result.style.fontSize = '0.95rem';
+        result.style.color = 'var(--text-secondary)';
+        form.appendChild(result);
+    }
+
     submitBtn.textContent = 'Sending...';
     submitBtn.disabled = true;
-    
-    setTimeout(() => {
-        submitBtn.textContent = 'Message Sent! ✓';
-        submitBtn.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
-        
-        setTimeout(() => {
+    result.textContent = 'Sending...';
+    result.style.color = 'var(--text-secondary)';
+
+    const formData = new FormData(form);
+    formData.append('access_key', WEB3FORMS_ACCESS_KEY);
+    formData.append('from_name', 'Jose Chacko Portfolio');
+
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (!data.success) {
+                throw new Error(data.message || 'Something went wrong');
+            }
+
+            submitBtn.textContent = 'Message Sent!';
+            submitBtn.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+            result.textContent = 'Form submitted successfully.';
+            result.style.color = '#10b981';
+            form.reset();
+        })
+        .catch(error => {
             submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-            submitBtn.style.background = '';
-            e.target.reset();
-        }, 2000);
-    }, 1500);
+            result.textContent = error.message || 'Network error. Try again.';
+            result.style.color = '#ef4444';
+        })
+        .finally(() => {
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                submitBtn.style.background = '';
+            }, 2000);
+        });
 }
 
 // ==================== PARTICLES BACKGROUND ====================
@@ -736,3 +842,4 @@ if (document.readyState === 'loading') {
 } else {
     loadSharedComponents();
 }
+
