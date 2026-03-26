@@ -236,7 +236,7 @@ const resumeBuilderData = {
     ]
 };
 
-const RESUME_STORAGE_KEY = 'jose_resume_builder_html_v1';
+const RESUME_STORAGE_KEY = 'jose_resume_builder_html_v2';
 const RESUME_PRINT_WINDOW_TITLE = 'Jose Chacko Resume';
 
 const WEB3FORMS_ACCESS_KEY = 'b32e8fe7-712e-401a-820b-9b5b09b93e59';
@@ -469,11 +469,11 @@ function getResumeExperience() {
     return selectedExperience.map((exp) => `
         <div class="resume-job">
             <div class="resume-row">
-                <h3>${exp.title}</h3>
+                <h3>${exp.company}</h3>
                 <span>${exp.period}</span>
             </div>
             <div class="resume-row resume-subrow">
-                <p>${exp.company}</p>
+                <p>${exp.title}</p>
                 <p>${exp.company === 'PPFAS' ? 'Mumbai, India' : ''}</p>
             </div>
             <p class="resume-job-summary">${exp.description}</p>
@@ -546,16 +546,16 @@ function buildResumeDraft() {
             </section>
 
             <section class="resume-section">
+                <h2>Professional Experience</h2>
+                ${getResumeExperience()}
+            </section>
+
+            <section class="resume-section">
                 <h2>Technical Skills</h2>
                 <p><strong>Languages:</strong> JavaScript, PHP, Java, Python</p>
                 <p><strong>Frontend:</strong> HTML, CSS, Bootstrap, React, Next.js</p>
                 <p><strong>Backend:</strong> Laravel, Node.js, Express, WordPress</p>
                 <p><strong>Databases & Tools:</strong> MongoDB, MySQL, Firebase, AWS, Git, CI/CD, Figma, Photoshop</p>
-            </section>
-
-            <section class="resume-section">
-                <h2>Professional Experience</h2>
-                ${getResumeExperience()}
             </section>
 
             <section class="resume-section">
@@ -780,56 +780,68 @@ function initializeResumeBuilder() {
             min-height: 297mm;
             background: #ffffff;
             color: #111827;
-            border-radius: 20px;
-            padding: 2.5rem;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
-            border: 1px solid #d1d5db;
-            line-height: 1.45;
+            border-radius: 0;
+            padding: 1.4rem 2rem 1.6rem;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+            border: 1px solid #3f3f46;
+            line-height: 1.25;
+            font-family: Georgia, "Times New Roman", serif;
         }
 
         .resume-header {
-            border-bottom: 2px solid #111827;
-            padding-bottom: 1rem;
-            margin-bottom: 1.25rem;
+            border-bottom: 1px solid #3f3f46;
+            padding-bottom: 0.3rem;
+            margin-bottom: 0.7rem;
+            text-align: center;
         }
 
         .resume-header h1 {
-            font-size: 2rem;
-            line-height: 1.1;
-            margin: 0 0 0.5rem;
+            font-size: 2.1rem;
+            line-height: 1;
+            margin: 0 0 0.1rem;
+            font-weight: 500;
+            letter-spacing: 0.01em;
         }
 
         .resume-role {
-            font-weight: 700;
-            margin: 0 0 0.35rem;
+            font-weight: 600;
+            margin: 0 0 0.12rem;
+            line-height: 1.2;
+            font-size: 0.88rem;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         .resume-contact {
-            font-size: 0.95rem;
-            color: #4b5563;
+            font-size: 0.82rem;
+            color: #111827;
             margin: 0;
+            line-height: 1.15;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         a {
             color: inherit;
-            text-decoration: none;
+            text-decoration: underline;
+            text-underline-offset: 0.12em;
         }
 
         .resume-section {
-            margin-bottom: 1.25rem;
+            margin-bottom: 0.65rem;
         }
 
         .resume-section h2 {
-            font-size: 1rem;
+            font-size: 0.95rem;
             text-transform: uppercase;
-            letter-spacing: 0.08em;
-            border-bottom: 1px solid #9ca3af;
-            padding-bottom: 0.35rem;
-            margin: 0 0 0.75rem;
+            letter-spacing: 0.02em;
+            border-bottom: 1px solid #3f3f46;
+            padding-bottom: 0.08rem;
+            margin: 0 0 0.18rem;
+            font-variant: small-caps;
+            font-weight: 500;
         }
 
         .resume-section p {
-            margin: 0 0 0.45rem;
+            margin: 0 0 0.08rem;
         }
 
         .resume-row {
@@ -840,39 +852,95 @@ function initializeResumeBuilder() {
         }
 
         .resume-row h3 {
-            font-size: 1rem;
+            font-size: 0.98rem;
             margin: 0;
+            font-weight: 700;
         }
 
         .resume-row span {
             font-size: 0.92rem;
-            color: #374151;
+            color: #111827;
             white-space: nowrap;
         }
 
         .resume-subrow p {
-            color: #374151;
-            font-size: 0.95rem;
+            color: #111827;
+            font-size: 0.9rem;
+            font-style: italic;
             margin: 0;
         }
 
         .resume-job,
-        .resume-project {
-            margin-bottom: 1rem;
+        .resume-project,
+        .resume-education {
+            margin-bottom: 0.42rem;
+        }
+
+        .resume-education-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.12rem;
+        }
+
+        .resume-education {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 0.55rem;
+            margin-bottom: 0.22rem;
+        }
+
+        .resume-education-main {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .resume-education p {
+            margin: 0;
+        }
+
+        .resume-education p + p {
+            margin-top: 0;
+        }
+
+        .resume-education-meta {
+            color: #111827;
+            font-size: 0.84rem;
+            text-align: right;
+            flex-shrink: 0;
+            line-height: 1.05;
+            font-style: italic;
         }
 
         .resume-job-summary,
         .resume-project-tech {
-            margin-top: 0.35rem;
+            margin-top: 0.08rem;
         }
 
         .resume-list {
-            padding-left: 1.2rem;
-            margin: 0.35rem 0 0;
+            list-style: none;
+            padding-left: 1.05rem;
+            margin: 0.08rem 0 0;
         }
 
         .resume-list li {
-            margin-bottom: 0.35rem;
+            margin-bottom: 0.12rem;
+            position: relative;
+        }
+
+        .resume-list li::before {
+            content: "-";
+            position: absolute;
+            left: -0.8rem;
+        }
+
+        .resume-section:last-child .resume-list {
+            margin-top: 0.02rem;
+        }
+
+        .resume-section:last-child .resume-list li {
+            margin-bottom: 0.05rem;
+            line-height: 1.08;
         }
 
         @page {
@@ -898,7 +966,7 @@ function initializeResumeBuilder() {
                 border: none;
                 border-radius: 0;
                 box-shadow: none;
-                padding: 14mm 16mm;
+                padding: 8mm 10mm;
             }
 
             .resume-section {
@@ -906,10 +974,13 @@ function initializeResumeBuilder() {
             }
 
             .resume-section h2,
-            .resume-row,
-            .resume-project,
-            .resume-job {
+            .resume-row {
                 break-after: avoid;
+            }
+
+            .resume-project,
+            .resume-job,
+            .resume-education {
                 break-inside: auto;
             }
 

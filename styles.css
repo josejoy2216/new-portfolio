@@ -1027,12 +1027,13 @@ body {
     min-height: 1100px;
     background: #ffffff;
     color: #111827;
-    border-radius: 20px;
-    padding: 2.5rem;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
-    border: 1px solid #d1d5db;
+    border-radius: 0;
+    padding: 1.4rem 2rem 1.6rem;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+    border: 1px solid #3f3f46;
     cursor: text;
-    line-height: 1.45;
+    line-height: 1.25;
+    font-family: Georgia, "Times New Roman", serif;
 }
 
 .resume-document:focus {
@@ -1040,47 +1041,59 @@ body {
 }
 
 .resume-header {
-    border-bottom: 2px solid #111827;
-    padding-bottom: 1rem;
-    margin-bottom: 1.25rem;
+    border-bottom: 1px solid #3f3f46;
+    padding-bottom: 0.3rem;
+    margin-bottom: 0.7rem;
+    text-align: center;
 }
 
 .resume-header h1 {
-    font-size: 2rem;
-    line-height: 1.1;
-    margin-bottom: 0.5rem;
+    font-size: 2.1rem;
+    line-height: 1;
+    margin-bottom: 0.1rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
 }
 
 .resume-role {
-    font-weight: 700;
-    margin-bottom: 0.35rem;
+    font-weight: 600;
+    margin-bottom: 0.12rem;
+    line-height: 1.2;
+    font-size: 0.88rem;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .resume-contact {
-    font-size: 0.95rem;
-    color: #374151;
+    font-size: 0.82rem;
+    color: #111827;
+    margin: 0;
+    line-height: 1.15;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .resume-contact a {
     color: inherit;
-    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: 0.12em;
 }
 
 .resume-section {
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.65rem;
 }
 
 .resume-section h2 {
-    font-size: 1rem;
+    font-size: 0.95rem;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    border-bottom: 1px solid #9ca3af;
-    padding-bottom: 0.35rem;
-    margin-bottom: 0.75rem;
+    letter-spacing: 0.02em;
+    border-bottom: 1px solid #3f3f46;
+    padding-bottom: 0.08rem;
+    margin-bottom: 0.18rem;
+    font-variant: small-caps;
+    font-weight: 500;
 }
 
 .resume-section p {
-    margin-bottom: 0.45rem;
+    margin-bottom: 0.08rem;
 }
 
 .resume-row {
@@ -1091,37 +1104,41 @@ body {
 }
 
 .resume-row h3 {
-    font-size: 1rem;
+    font-size: 0.98rem;
+    margin: 0;
+    font-weight: 700;
 }
 
 .resume-row span {
     font-size: 0.92rem;
-    color: #374151;
+    color: #111827;
     white-space: nowrap;
 }
 
 .resume-subrow p {
-    color: #374151;
-    font-size: 0.95rem;
+    color: #111827;
+    font-size: 0.9rem;
+    font-style: italic;
 }
 
 .resume-job,
 .resume-project,
 .resume-education {
-    margin-bottom: 1rem;
+    margin-bottom: 0.42rem;
 }
 
 .resume-education-list {
     display: flex;
     flex-direction: column;
-    gap: 0.9rem;
+    gap: 0.12rem;
 }
 
 .resume-education {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 0.55rem;
+    margin-bottom: 0.22rem;
 }
 
 .resume-education-main {
@@ -1134,14 +1151,16 @@ body {
 }
 
 .resume-education p + p {
-    margin-top: 0.2rem;
+    margin-top: 0;
 }
 
 .resume-education-meta {
-    color: #4b5563;
-    font-size: 0.92rem;
+    color: #111827;
+    font-size: 0.84rem;
     text-align: right;
     flex-shrink: 0;
+    line-height: 1.05;
+    font-style: italic;
 }
 
 .education-entry {
@@ -1183,15 +1202,33 @@ body {
 
 .resume-job-summary,
 .resume-project-tech {
-    margin-top: 0.35rem;
+    margin-top: 0.08rem;
 }
 
 .resume-list {
-    padding-left: 1.2rem;
+    list-style: none;
+    padding-left: 1.05rem;
+    margin: 0.08rem 0 0;
 }
 
 .resume-list li {
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.12rem;
+    position: relative;
+}
+
+.resume-section:last-child .resume-list {
+    margin-top: 0.02rem;
+}
+
+.resume-section:last-child .resume-list li {
+    margin-bottom: 0.05rem;
+    line-height: 1.08;
+}
+
+.resume-list li::before {
+    content: "-";
+    position: absolute;
+    left: -0.8rem;
 }
 
 .resume-list.compact li {
@@ -1288,13 +1325,13 @@ body {
         padding: 12mm !important;
         background: #ffffff !important;
         color: #111827 !important;
-        page-break-inside: avoid;
+        page-break-inside: auto;
     }
 
     .resume-section,
     .resume-job,
     .resume-project {
-        break-inside: avoid;
+        break-inside: auto;
     }
 
     .resume-header,
