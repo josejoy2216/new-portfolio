@@ -1106,6 +1106,76 @@ body {
     margin-bottom: 1rem;
 }
 
+.resume-education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.resume-education {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.resume-education-main {
+    flex: 1;
+    min-width: 0;
+}
+
+.resume-education p {
+    margin: 0;
+}
+
+.resume-education p + p {
+    margin-top: 0.2rem;
+}
+
+.resume-education-meta {
+    color: #4b5563;
+    font-size: 0.92rem;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.education-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.education-entry:last-child {
+    margin-bottom: 0;
+}
+
+.education-entry-main {
+    flex: 1;
+    min-width: 0;
+}
+
+.education-entry-main p,
+.education-entry-meta p {
+    margin: 0;
+}
+
+.education-entry-main p + p,
+.education-entry-meta p + p {
+    margin-top: 0.2rem;
+}
+
+.education-entry-main p:last-child,
+.education-entry-meta p:last-child {
+    color: var(--text-secondary);
+}
+
+.education-entry-meta {
+    text-align: right;
+    flex-shrink: 0;
+}
+
 .resume-job-summary,
 .resume-project-tech {
     margin-top: 0.35rem;
@@ -1130,6 +1200,16 @@ body {
 
     .resume-builder-panel {
         position: static;
+    }
+
+    .resume-education,
+    .education-entry {
+        flex-direction: column;
+    }
+
+    .resume-education-meta,
+    .education-entry-meta {
+        text-align: left;
     }
 
     .resume-preview-toolbar {

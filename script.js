@@ -212,8 +212,18 @@ const resumeBuilderData = {
         focus: ["Payment Workflows", "Internal Portals", "Admin Systems", "Responsive Web Apps", "Website Management Systems"]
     },
     education: [
-        "Master of Computer Application, Thakur Institute of Management Studies, Career Development & Research (TIMSCDR)",
-        "Bachelor of Science in Computer Science, Thakur Ramnarayan College of Arts & Commerce"
+        {
+            degree: "Master of Computer Application",
+            institution: "Thakur Institute of Management Studies, Career Development & Research (TIMSCDR)",
+            year: "2022 – 2024",
+            marks: "CGPA: 7.83 / 10"
+        },
+        {
+            degree: "Bachelor of Science in Computer Science",
+            institution: "Thakur Ramnarayan College of Arts & Commerce",
+            year: "2018 – 2021",
+            marks: "CGPA: 8.65 / 10"
+        }
     ],
     certifications: [
         "NISM Series V-A Certification",
@@ -547,9 +557,20 @@ function buildResumeDraft() {
 
             <section class="resume-section">
                 <h2>Education</h2>
-                <ul class="resume-list">
-                    ${resumeBuilderData.education.map((item) => `<li>${item}</li>`).join('')}
-                </ul>
+                <div class="resume-education-list">
+                    ${resumeBuilderData.education.map((item) => `
+                        <div class="resume-education">
+                            <div class="resume-education-main">
+                                <p><strong>${item.degree}</strong></p>
+                                <p>${item.institution}</p>
+                            </div>
+                            <div class="resume-education-meta">
+                                <p><strong>${item.year}</strong></p>
+                                <p>${item.marks}</p>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
             </section>
 
             <section class="resume-section">
