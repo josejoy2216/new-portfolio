@@ -528,8 +528,16 @@ function buildResumeDraft() {
             <header class="resume-header">
                 <h1>${resumeBuilderData.name}</h1>
                 <p class="resume-role">${resumeBuilderData.role}</p>
-                <p class="resume-contact">${resumeBuilderData.location} | ${resumeBuilderData.phone} | ${resumeBuilderData.email}</p>
-                <p class="resume-contact">${resumeBuilderData.portfolio} | ${resumeBuilderData.github} | ${resumeBuilderData.linkedin}</p>
+                <p class="resume-contact">
+                    ${resumeBuilderData.location} |
+                    <a href="tel:${resumeBuilderData.phone}">${resumeBuilderData.phone}</a> |
+                    <a href="mailto:${resumeBuilderData.email}">${resumeBuilderData.email}</a>
+                </p>
+                <p class="resume-contact">
+                    <a href="${resumeBuilderData.portfolio}" target="_blank" rel="noopener noreferrer">${resumeBuilderData.portfolio}</a> |
+                    <a href="${resumeBuilderData.github}" target="_blank" rel="noopener noreferrer">${resumeBuilderData.github}</a> |
+                    <a href="${resumeBuilderData.linkedin}" target="_blank" rel="noopener noreferrer">${resumeBuilderData.linkedin}</a>
+                </p>
             </header>
 
             <section class="resume-section">
@@ -616,6 +624,64 @@ function renderResumeBuilder() {
             </div>
         </div>
     `;
+}
+
+function addHyperlinksToResumeHtml(html) {
+    const container = document.createElement('div');
+    container.innerHTML = html;
+
+    const urlPattern = /(https?:\/\/[^\s|<]+)/g;
+    const emailPattern = /([A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,})/gi;
+
+    const walk = (node) => {
+        if (node.nodeType === Node.TEXT_NODE) {
+            const text = node.textContent;
+            if (!text || (!urlPattern.test(text) && !emailPattern.test(text))) {
+                urlPattern.lastIndex = 0;
+                emailPattern.lastIndex = 0;
+                return;
+            }
+
+            urlPattern.lastIndex = 0;
+            emailPattern.lastIndex = 0;
+
+            const fragment = document.createDocumentFragment();
+            let lastIndex = 0;
+            const combinedPattern = /(https?:\/\/[^\s|<]+)|([A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,})/gi;
+            let match;
+
+            while ((match = combinedPattern.exec(text)) !== null) {
+                const start = match.index;
+                const value = match[0];
+
+                if (start > lastIndex) {
+                    fragment.appendChild(document.createTextNode(text.slice(lastIndex, start)));
+                }
+
+                const anchor = document.createElement('a');
+                anchor.textContent = value;
+                anchor.href = value.includes('@') && !value.startsWith('http') ? `mailto:${value}` : value;
+                fragment.appendChild(anchor);
+                lastIndex = start + value.length;
+            }
+
+            if (lastIndex < text.length) {
+                fragment.appendChild(document.createTextNode(text.slice(lastIndex)));
+            }
+
+            node.parentNode.replaceChild(fragment, node);
+            return;
+        }
+
+        if (node.nodeType !== Node.ELEMENT_NODE || node.tagName === 'A') {
+            return;
+        }
+
+        Array.from(node.childNodes).forEach(walk);
+    };
+
+    Array.from(container.childNodes).forEach(walk);
+    return container.innerHTML;
 }
 
 function initializeResumeBuilder() {
@@ -744,6 +810,11 @@ function initializeResumeBuilder() {
             margin: 0;
         }
 
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
         .resume-section {
             margin-bottom: 1.25rem;
         }
@@ -850,7 +921,7 @@ function initializeResumeBuilder() {
 </head>
 <body>
     <div class="print-shell">
-        ${doc.outerHTML.replace(' contenteditable="true"', '')}
+        ${addHyperlinksToResumeHtml(doc.outerHTML.replace(' contenteditable="true"', ''))}
     </div>
 </body>
 </html>`;
