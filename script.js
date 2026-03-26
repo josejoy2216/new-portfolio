@@ -268,7 +268,7 @@ function renderExperience() {
 }
 
 function renderExperiencePreview() {
-    const previewItems = portfolioData.experience.slice(0, 4);
+    const previewItems = portfolioData.experience.slice(0, 3);
     
     return `
         <div class="container section-container highlight">
@@ -342,6 +342,7 @@ function renderProjectsPreview() {
     const projectPreviewOrder = ["BookNook", "Mafia - Game", "UNO - Game", "Movie Recommendation System"];
     const previewProjects = projectPreviewOrder
         .map((title) => portfolioData.projects.find((project) => project.title === title))
+        .slice(0, 3)
         .filter(Boolean);
     
     return `
@@ -1251,8 +1252,8 @@ function initializeApp() {
     const projPreview = document.getElementById('projects-preview-container');
     if (projPreview) projPreview.innerHTML = renderProjectsPreview();
     
-    const blogPreview = document.getElementById('blogs-preview-container');
-    if (blogPreview) blogPreview.innerHTML = renderBlogsPreview();
+    // const blogPreview = document.getElementById('blogs-preview-container');
+    // if (blogPreview) blogPreview.innerHTML = renderBlogsPreview();
     
     // Full Pages
     const expContainer = document.getElementById('experience-container');
@@ -1261,8 +1262,8 @@ function initializeApp() {
     const projContainer = document.getElementById('projects-container');
     if (projContainer) projContainer.innerHTML = renderProjects();
 
-    const blogContainer = document.getElementById('blog-container');
-    if (blogContainer) blogContainer.innerHTML = renderBlogs();
+    // const blogContainer = document.getElementById('blog-container');
+    // if (blogContainer) blogContainer.innerHTML = renderBlogs();
 
     const resumeBuilderContainer = document.getElementById('resume-builder-container');
     if (resumeBuilderContainer) resumeBuilderContainer.innerHTML = renderResumeBuilder();
