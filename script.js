@@ -4,7 +4,7 @@ const portfolioData = {
         {
             title: "Software Developer",
             company: "PPFAS",
-            period: "October 2024 - Present",
+            period: "Oct 2024 - Present",
             description: "Building business-critical websites, portals, payments, and internal systems at PPFAS using Laravel, React, PHP, WordPress, AWS, and CI/CD-driven deployment workflows, with added design support through Figma and Photoshop.",
             achievements: [
                 "Built and launched gift.ppfas.com and wealth.ppfas.com",
@@ -18,7 +18,7 @@ const portfolioData = {
         {
             title: "Professional Software Developer",
             company: "Akbar Travels",
-            period: "Until September 2024",
+            period: "Feb 2024 - Sep 2024",
             description: "Professional software developer with a strong web development focus, centered on JavaScript and practical full-stack delivery across React, Express, Node.js, MongoDB, MySQL, Firebase, and Java.",
             achievements: [
                 "Developed and maintained 10+ web applications using the MERN stack",
@@ -29,7 +29,7 @@ const portfolioData = {
         {
             title: "Data Analyst and Billing",
             company: "Mansha Distributors LLP",
-            period: "06/2021 - 05/2022",
+            period: "Jun 2021 - May 2022",
             description: "Handled pricing, billing, and sales support analysis to improve business decisions and operational performance.",
             achievements: [
                 "Implemented pricing strategies that increased net profit by 150%",
@@ -40,7 +40,7 @@ const portfolioData = {
         {
             title: "Android Developer",
             company: "StayVibez",
-            period: "10/2020 - 02/2021",
+            period: "Oct 2020 - Feb 2021",
             description: "Worked in a small delivery team to build an Android application under tight timelines while balancing client needs and feature priorities.",
             achievements: [
                 "Led a team of 4 developers on the Android app delivery",
@@ -62,48 +62,6 @@ const portfolioData = {
     ],
 
     projects: [
-        {
-            title: "Library Management System",
-            description: "Web application to manage a library inventory with a simple management workflow.",
-            fullDescription: "Library Management System is a web application focused on organizing and managing a library's inventory efficiently. It reflects practical CRUD-oriented application development with a clean workflow-driven interface.",
-            technologies: ["HTML", "CSS", "JavaScript", "Web App"],
-            category: "Management System",
-            link: "https://josejoy2216.github.io/library-management-system/",
-            features: [
-                "Library inventory management workflow",
-                "Browser-based interface",
-                "Practical CRUD-style interaction",
-                "Project focused on usability and organization"
-            ]
-        },
-        {
-            title: "Movie Recommendation System",
-            description: "Content-based movie recommender with similar-title discovery and sentiment analysis on user reviews.",
-            fullDescription: "Movie Recommendation System combines recommendation logic with sentiment analysis to help users discover similar movies and evaluate audience response. It highlights practical data-driven development beyond standard CRUD applications.",
-            technologies: ["Python", "Recommendation Engine", "Sentiment Analysis", "Web App"],
-            category: "Data Project",
-            link: "https://josejoy2216.github.io/Movie-Recommendation-System-with-Sentiment-Analysis",
-            features: [
-                "Content-based recommendation flow",
-                "Sentiment analysis on reviews",
-                "Interactive discovery experience",
-                "Applied Python and data-processing logic"
-            ]
-        },
-        {
-            title: "UNO - Game",
-            description: "Backend server for a multiplayer UNO card game built with Node.js, Express, and MongoDB.",
-            fullDescription: "UNO - Game focuses on backend multiplayer logic using Node.js, Express, and MongoDB. It demonstrates server-side game coordination, state handling, and full-stack readiness for interactive products.",
-            technologies: ["Node.js", "Express", "MongoDB", "Game Backend"],
-            category: "Backend System",
-            link: "https://github.com/josejoy2216/UNO-GAME",
-            features: [
-                "Multiplayer backend architecture",
-                "Server-side game state handling",
-                "Node and Express API implementation",
-                "MongoDB-powered persistence"
-            ]
-        },
         {
             title: "BookNook",
             description: "MERN e-commerce application for books with browsing, product details, purchasing flow, admin panel, and Firebase authentication.",
@@ -130,6 +88,48 @@ const portfolioData = {
                 "Role assignment and night/day phases",
                 "Voting and win-condition logic",
                 "Real-time multiplayer coordination"
+            ]
+        },
+        {
+            title: "UNO - Game",
+            description: "Backend server for a multiplayer UNO card game built with Node.js, Express, and MongoDB.",
+            fullDescription: "UNO - Game focuses on backend multiplayer logic using Node.js, Express, and MongoDB. It demonstrates server-side game coordination, state handling, and full-stack readiness for interactive products.",
+            technologies: ["Node.js", "Express", "MongoDB", "Game Backend"],
+            category: "Backend System",
+            link: "https://github.com/josejoy2216/UNO-GAME",
+            features: [
+                "Multiplayer backend architecture",
+                "Server-side game state handling",
+                "Node and Express API implementation",
+                "MongoDB-powered persistence"
+            ]
+        },
+        {
+            title: "Movie Recommendation System",
+            description: "Content-based movie recommender with similar-title discovery and sentiment analysis on user reviews.",
+            fullDescription: "Movie Recommendation System combines recommendation logic with sentiment analysis to help users discover similar movies and evaluate audience response. It highlights practical data-driven development beyond standard CRUD applications.",
+            technologies: ["Python", "Recommendation Engine", "Sentiment Analysis", "Web App"],
+            category: "Data Project",
+            link: "https://josejoy2216.github.io/Movie-Recommendation-System-with-Sentiment-Analysis",
+            features: [
+                "Content-based recommendation flow",
+                "Sentiment analysis on reviews",
+                "Interactive discovery experience",
+                "Applied Python and data-processing logic"
+            ]
+        },
+        {
+            title: "Library Management System",
+            description: "Web application to manage a library inventory with a simple management workflow.",
+            fullDescription: "Library Management System is a web application focused on organizing and managing a library's inventory efficiently. It reflects practical CRUD-oriented application development with a clean workflow-driven interface.",
+            technologies: ["HTML", "CSS", "JavaScript", "Web App"],
+            category: "Management System",
+            link: "https://josejoy2216.github.io/library-management-system/",
+            features: [
+                "Library inventory management workflow",
+                "Browser-based interface",
+                "Practical CRUD-style interaction",
+                "Project focused on usability and organization"
             ]
         },
         {
@@ -193,6 +193,42 @@ const portfolioData = {
     ]
 };
 
+const resumeBuilderData = {
+    name: "Jose Chacko",
+    role: "Software Developer | Full Stack Developer | React | Laravel | PHP | JavaScript",
+    phone: "7977017155",
+    email: "josejoy2216@gmail.com",
+    location: "Mumbai, Maharashtra, India",
+    portfolio: "https://www.josechacko.com",
+    github: "https://github.com/josejoy2216",
+    linkedin: "https://www.linkedin.com/in/josejoychacko/",
+    summary: "Software Developer with experience building production websites, payment workflows, admin portals, and internal systems using Laravel, React, PHP, JavaScript, WordPress, AWS, and CI/CD. Delivered measurable cost savings through practical full-stack execution.",
+    skills: {
+        languages: ["JavaScript", "PHP", "Java", "Python", "C#", "C", "C++"],
+        frontend: ["HTML", "CSS", "Bootstrap", "React", "Next.js", "Material UI"],
+        backend: ["Laravel", "Node.js", "Express", "WordPress", "PHP"],
+        databases: ["MongoDB", "MySQL", "Firebase"],
+        tools: ["AWS", "Git", "GitHub", "CI/CD", "Figma", "Photoshop", "Microsoft Office"],
+        focus: ["Payment Workflows", "Internal Portals", "Admin Systems", "Responsive Web Apps", "Website Management Systems"]
+    },
+    education: [
+        "Master of Computer Application, Thakur Institute of Management Studies, Career Development & Research (TIMSCDR)",
+        "Bachelor of Science in Computer Science, Thakur Ramnarayan College of Arts & Commerce"
+    ],
+    certifications: [
+        "NISM Series V-A Certification",
+        "Google Data Analytics - Coursera / Google",
+        "Google Cloud (2022) - Google",
+        "Programming using JavaScript (2020) - Microsoft",
+        "Programming in Java - NPTEL",
+        "Cross-Platform Mobile App Development - Microsoft",
+        "Java Certification and RDBMS PostgreSQL - Spoken Tutorial Project at IIT Bombay"
+    ]
+};
+
+const RESUME_STORAGE_KEY = 'jose_resume_builder_html_v1';
+const RESUME_PRINT_WINDOW_TITLE = 'Jose Chacko Resume';
+
 const WEB3FORMS_ACCESS_KEY = 'b32e8fe7-712e-401a-820b-9b5b09b93e59';
 
 // ==================== RENDERING FUNCTIONS ====================
@@ -222,8 +258,7 @@ function renderExperience() {
 }
 
 function renderExperiencePreview() {
-    // Show only the first 2 experience items
-    const previewItems = portfolioData.experience.slice(0, 2);
+    const previewItems = portfolioData.experience.slice(0, 4);
     
     return `
         <div class="container section-container highlight">
@@ -294,8 +329,10 @@ function renderProjects() {
 }
 
 function renderProjectsPreview() {
-    // Show first 3 projects
-    const previewProjects = portfolioData.projects.slice(0, 3);
+    const projectPreviewOrder = ["BookNook", "Mafia - Game", "UNO - Game", "Movie Recommendation System"];
+    const previewProjects = projectPreviewOrder
+        .map((title) => portfolioData.projects.find((project) => project.title === title))
+        .filter(Boolean);
     
     return `
         <div class="container section-container">
@@ -392,6 +429,434 @@ function renderBlogsPreview() {
             </div>
         </div>
     `;
+}
+
+function getResumeExperience() {
+    const experiencePriority = ["PPFAS", "Akbar Travels", "Mansha Distributors LLP", "StayVibez"];
+    const experienceBullets = {
+        PPFAS: [
+            "Built and launched gift.ppfas.com and wealth.ppfas.com, along with management workflows for amc.ppfas.com",
+            "Reduced business costs by 20+ lakh in fixed spend and 10+ lakh in annual recurring spend through internal portals and operational tools"
+        ],
+        "Akbar Travels": [
+            "Developed and maintained 10+ full-stack web applications using React, Node.js, Express, MongoDB, MySQL, and Firebase",
+            "Delivered projects across web, real-time, and data-driven use cases with a strong JavaScript-led development focus"
+        ],
+        "Mansha Distributors LLP": [
+            "Implemented pricing strategies that increased net profit by 150%, improving profit from INR 100,000 to INR 250,000",
+            "Handled billing analysis, product suggestions, and sales-force optimization to support better business decisions"
+        ],
+        StayVibez: [
+            "Led a team of 4 developers to deliver an Android application under tight timelines",
+            "Contributed to a 15% increase in client referrals through timely delivery and client coordination"
+        ]
+    };
+
+    const selectedExperience = experiencePriority
+        .map((company) => portfolioData.experience.find((exp) => exp.company === company))
+        .filter(Boolean);
+
+    return selectedExperience.map((exp) => `
+        <div class="resume-job">
+            <div class="resume-row">
+                <h3>${exp.title}</h3>
+                <span>${exp.period}</span>
+            </div>
+            <div class="resume-row resume-subrow">
+                <p>${exp.company}</p>
+                <p>${exp.company === 'PPFAS' ? 'Mumbai, India' : ''}</p>
+            </div>
+            <p class="resume-job-summary">${exp.description}</p>
+            <ul class="resume-list">
+                ${experienceBullets[exp.company].map((achievement) => `<li>${achievement}</li>`).join('')}
+            </ul>
+        </div>
+    `).join('');
+}
+
+function getResumeProjects() {
+    const projectPriority = ["BookNook", "Mafia - Game", "Movie Recommendation System", "UNO - Game"];
+    const projectBullets = {
+        BookNook: [
+            "Built a MERN-based e-commerce application with product browsing, purchase flow, admin panel, and Firebase authentication",
+            "Demonstrated full-stack architecture, user workflow design, and admin-side functionality"
+        ],
+        "Mafia - Game": [
+            "Built a real-time multiplayer game with room join flow, role assignment, voting, and win-condition logic",
+            "Showcased JavaScript-heavy problem solving for session coordination and interactive user flows"
+        ],
+        "Movie Recommendation System": [
+            "Developed a content-based movie recommendation system using Python and sentiment analysis",
+            "Built an interactive discovery flow for similar-title recommendations and review-based insights"
+        ],
+        "UNO - Game": [
+            "Built a multiplayer backend server with Node.js, Express, and MongoDB for game-state handling",
+            "Demonstrated backend API design, state coordination, and interactive system logic"
+        ]
+    };
+    const selectedProjects = projectPriority
+        .map((title) => portfolioData.projects.find((project) => project.title === title))
+        .filter(Boolean);
+
+    return selectedProjects.map((project) => `
+        <div class="resume-project">
+            <div class="resume-row">
+                <h3>${project.title}</h3>
+                <span>${project.category}</span>
+            </div>
+            <p class="resume-project-tech"><strong>Tech:</strong> ${project.technologies.join(', ')}</p>
+            <ul class="resume-list">
+                ${projectBullets[project.title].map((feature) => `<li>${feature}</li>`).join('')}
+            </ul>
+        </div>
+    `).join('');
+}
+
+function buildResumeDraft() {
+    return `
+        <article class="resume-document" id="resumePreviewDocument" contenteditable="true" spellcheck="false">
+            <header class="resume-header">
+                <h1>${resumeBuilderData.name}</h1>
+                <p class="resume-role">${resumeBuilderData.role}</p>
+                <p class="resume-contact">${resumeBuilderData.location} | ${resumeBuilderData.phone} | ${resumeBuilderData.email}</p>
+                <p class="resume-contact">${resumeBuilderData.portfolio} | ${resumeBuilderData.github} | ${resumeBuilderData.linkedin}</p>
+            </header>
+
+            <section class="resume-section">
+                <h2>Professional Summary</h2>
+                <p>${resumeBuilderData.summary}</p>
+            </section>
+
+            <section class="resume-section">
+                <h2>Technical Skills</h2>
+                <p><strong>Languages:</strong> JavaScript, PHP, Java, Python</p>
+                <p><strong>Frontend:</strong> HTML, CSS, Bootstrap, React, Next.js</p>
+                <p><strong>Backend:</strong> Laravel, Node.js, Express, WordPress</p>
+                <p><strong>Databases & Tools:</strong> MongoDB, MySQL, Firebase, AWS, Git, CI/CD, Figma, Photoshop</p>
+            </section>
+
+            <section class="resume-section">
+                <h2>Professional Experience</h2>
+                ${getResumeExperience()}
+            </section>
+
+            <section class="resume-section">
+                <h2>Selected Projects</h2>
+                ${getResumeProjects()}
+            </section>
+
+            <section class="resume-section">
+                <h2>Education</h2>
+                <ul class="resume-list">
+                    ${resumeBuilderData.education.map((item) => `<li>${item}</li>`).join('')}
+                </ul>
+            </section>
+
+            <section class="resume-section">
+                <h2>Certifications</h2>
+                <ul class="resume-list">
+                    ${resumeBuilderData.certifications.map((item) => `<li>${item}</li>`).join('')}
+                </ul>
+            </section>
+        </article>
+    `;
+}
+
+function renderResumeBuilder() {
+    return `
+        <div class="resume-builder-layout">
+            <aside class="card p-4 resume-builder-panel no-print">
+                <h2 style="margin-bottom: 1rem;">Resume Controls</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    The draft below is generated from your portfolio data. Edit the preview directly, then export it as PDF.
+                </p>
+                <div class="resume-builder-actions">
+                    <button id="resumeResetBtn" class="btn-secondary" type="button">Reset Draft</button>
+                    <button id="resumeCopyBtn" class="btn-secondary" type="button">Copy Text</button>
+                    <button id="resumePrintBtn" class="btn-primary" type="button">Download PDF</button>
+                </div>
+                <div class="card p-4 resume-builder-note">
+                    <h3 style="margin-bottom: 0.75rem;">How it works</h3>
+                    <ul class="resume-list compact">
+                        <li>Edit any text directly inside the resume preview.</li>
+                        <li>Use the Download PDF button and select Save as PDF in the print dialog.</li>
+                        <li>For ATS safety, keep the final PDF text-based and avoid adding graphics.</li>
+                    </ul>
+                </div>
+                <p id="resumeBuilderStatus" class="resume-builder-status">Draft loaded from portfolio data.</p>
+            </aside>
+
+            <div class="resume-preview-shell">
+                <div class="resume-preview-toolbar no-print">
+                    <span>Editable ATS Resume Preview</span>
+                    <span>Changes auto-save in this browser</span>
+                </div>
+                <div id="resumePreviewMount" class="resume-preview-stage"></div>
+            </div>
+        </div>
+    `;
+}
+
+function initializeResumeBuilder() {
+    const resumeMount = document.getElementById('resumePreviewMount');
+    const status = document.getElementById('resumeBuilderStatus');
+    const resetBtn = document.getElementById('resumeResetBtn');
+    const copyBtn = document.getElementById('resumeCopyBtn');
+    const printBtn = document.getElementById('resumePrintBtn');
+
+    if (!resumeMount) return;
+
+    const renderDraft = (html) => {
+        resumeMount.innerHTML = html;
+        const doc = document.getElementById('resumePreviewDocument');
+        if (!doc) return;
+
+        doc.addEventListener('input', () => {
+            localStorage.setItem(RESUME_STORAGE_KEY, doc.outerHTML);
+            if (status) status.textContent = 'Draft saved locally.';
+        });
+    };
+
+    const savedDraft = localStorage.getItem(RESUME_STORAGE_KEY);
+    renderDraft(savedDraft || buildResumeDraft());
+
+    if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+            localStorage.removeItem(RESUME_STORAGE_KEY);
+            renderDraft(buildResumeDraft());
+            if (status) status.textContent = 'Draft reset to portfolio version.';
+        });
+    }
+
+    if (copyBtn) {
+        copyBtn.addEventListener('click', async () => {
+            const doc = document.getElementById('resumePreviewDocument');
+            if (!doc) return;
+
+            try {
+                await navigator.clipboard.writeText(doc.innerText);
+                if (status) status.textContent = 'Resume text copied to clipboard.';
+            } catch (error) {
+                if (status) status.textContent = 'Clipboard copy failed in this browser.';
+            }
+        });
+    }
+
+    if (printBtn) {
+        printBtn.addEventListener('click', () => {
+            const doc = document.getElementById('resumePreviewDocument');
+            if (!doc) return;
+
+            const printWindow = window.open('', '_blank', 'width=1024,height=900');
+            if (!printWindow) {
+                if (status) status.textContent = 'Pop-up blocked. Allow pop-ups and try again.';
+                return;
+            }
+
+            const printMarkup = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${RESUME_PRINT_WINDOW_TITLE}</title>
+    <style>
+        :root {
+            color-scheme: light;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f3f4f6;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #111827;
+        }
+
+        body {
+            padding: 24px;
+        }
+
+        .print-shell {
+            display: flex;
+            justify-content: center;
+        }
+
+        .resume-document {
+            width: 210mm;
+            max-width: 210mm;
+            min-height: 297mm;
+            background: #ffffff;
+            color: #111827;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+            border: 1px solid #d1d5db;
+            line-height: 1.45;
+        }
+
+        .resume-header {
+            border-bottom: 2px solid #111827;
+            padding-bottom: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .resume-header h1 {
+            font-size: 2rem;
+            line-height: 1.1;
+            margin: 0 0 0.5rem;
+        }
+
+        .resume-role {
+            font-weight: 700;
+            margin: 0 0 0.35rem;
+        }
+
+        .resume-contact {
+            font-size: 0.95rem;
+            color: #4b5563;
+            margin: 0;
+        }
+
+        .resume-section {
+            margin-bottom: 1.25rem;
+        }
+
+        .resume-section h2 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            border-bottom: 1px solid #9ca3af;
+            padding-bottom: 0.35rem;
+            margin: 0 0 0.75rem;
+        }
+
+        .resume-section p {
+            margin: 0 0 0.45rem;
+        }
+
+        .resume-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            align-items: baseline;
+        }
+
+        .resume-row h3 {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .resume-row span {
+            font-size: 0.92rem;
+            color: #374151;
+            white-space: nowrap;
+        }
+
+        .resume-subrow p {
+            color: #374151;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .resume-job,
+        .resume-project {
+            margin-bottom: 1rem;
+        }
+
+        .resume-job-summary,
+        .resume-project-tech {
+            margin-top: 0.35rem;
+        }
+
+        .resume-list {
+            padding-left: 1.2rem;
+            margin: 0.35rem 0 0;
+        }
+
+        .resume-list li {
+            margin-bottom: 0.35rem;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        @media print {
+            html,
+            body {
+                background: #ffffff;
+            }
+
+            body {
+                padding: 0;
+            }
+
+            .resume-document {
+                width: 210mm;
+                max-width: 210mm;
+                min-height: 297mm;
+                margin: 0;
+                border: none;
+                border-radius: 0;
+                box-shadow: none;
+                padding: 14mm 16mm;
+            }
+
+            .resume-section {
+                break-inside: auto;
+            }
+
+            .resume-section h2,
+            .resume-row,
+            .resume-project,
+            .resume-job {
+                break-after: avoid;
+                break-inside: auto;
+            }
+
+            .resume-list li {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="print-shell">
+        ${doc.outerHTML.replace(' contenteditable="true"', '')}
+    </div>
+</body>
+</html>`;
+
+            printWindow.document.open();
+            printWindow.document.write(printMarkup);
+            printWindow.document.close();
+            printWindow.focus();
+
+            const triggerPrint = () => {
+                setTimeout(() => {
+                    printWindow.print();
+                }, 200);
+            };
+
+            if (printWindow.document.readyState === 'complete') {
+                triggerPrint();
+            } else {
+                printWindow.onload = triggerPrint;
+            }
+
+            printWindow.onafterprint = () => {
+                printWindow.close();
+            };
+            if (status) status.textContent = 'Opened print-ready resume. Choose Save as PDF.';
+        });
+    }
 }
 
 // ==================== EVENT LISTENERS ====================
@@ -636,9 +1101,13 @@ function initializeApp() {
     const blogContainer = document.getElementById('blog-container');
     if (blogContainer) blogContainer.innerHTML = renderBlogs();
 
+    const resumeBuilderContainer = document.getElementById('resume-builder-container');
+    if (resumeBuilderContainer) resumeBuilderContainer.innerHTML = renderResumeBuilder();
+
     // 3. Setup Effects & Listeners
     createParticles();
     attachEventListeners();
+    initializeResumeBuilder();
     
     // Mobile menu toggle
     const menuToggle = document.getElementById('menuToggle');
@@ -693,7 +1162,7 @@ function initializeApp() {
 
 function initAccessibility() {
     // 2. Add Skip to Content Link (Accessibility)
-    if (!document.querySelector('.skip-link')) {
+    if (!document.body.classList.contains('resume-builder-page') && !document.querySelector('.skip-link')) {
         const skipLink = document.createElement('a');
         skipLink.href = '#mainContent';
         skipLink.className = 'skip-link';
@@ -842,4 +1311,3 @@ if (document.readyState === 'loading') {
 } else {
     loadSharedComponents();
 }
-
