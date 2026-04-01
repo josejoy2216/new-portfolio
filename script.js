@@ -246,7 +246,7 @@ const WEB3FORMS_ACCESS_KEY = 'b32e8fe7-712e-401a-820b-9b5b09b93e59';
 function renderExperience() {
     return `
         <div class="container">
-            <h2 class="section-title">Professional Journey</h2>
+            <h1 class="section-title">Experience of Jose Chacko</h1>
             <div class="timeline">
                 ${portfolioData.experience.map(exp => `
                     <div class="timeline-item">
@@ -302,7 +302,7 @@ function renderExperiencePreview() {
 function renderProjects() {
     return `
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <h1 class="section-title">Projects by Jose Chacko</h1>
             <div class="grid grid-2">
                 ${portfolioData.projects.map((project, index) => `
                     <div class="card card-expandable" data-project="${index}">

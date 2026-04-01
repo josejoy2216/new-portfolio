@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Jose Chacko</title>
+  <desc id="desc">Official software developer portfolio of Jose Chacko.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07111f" />
+      <stop offset="50%" stop-color="#0d1f36" />
+      <stop offset="100%" stop-color="#123a54" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7dd3fc" />
+      <stop offset="100%" stop-color="#34d399" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="1035" cy="110" r="145" fill="#123a54" opacity="0.45" />
+  <circle cx="170" cy="520" r="180" fill="#0f2d44" opacity="0.5" />
+  <text x="90" y="220" fill="#e5f3ff" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="700">Jose Chacko</text>
+  <text x="90" y="295" fill="#7dd3fc" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="600">Software Developer Portfolio</text>
+  <text x="90" y="370" fill="#c6d7e6" font-family="Arial, Helvetica, sans-serif" font-size="28">Laravel, React, PHP, JavaScript, AWS, WordPress, CI/CD</text>
+  <rect x="90" y="430" width="355" height="4" rx="2" fill="url(#accent)" />
+  <text x="90" y="490" fill="#9ec4d8" font-family="Arial, Helvetica, sans-serif" font-size="24">Official site: josechacko.com</text>
+</svg>
