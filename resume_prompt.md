@@ -42,7 +42,7 @@ LinkedIn: https://www.linkedin.com/in/josejoychacko/
 HackerRank: https://www.hackerrank.com/profile/josejoy567
 
 Target Roles:
-- Software Developer
+- Assistant Manager - Web Developer
 - Full Stack Developer
 - React Developer
 - Laravel Developer
@@ -80,7 +80,7 @@ Other: Responsive design, payment workflows, admin portals, internal tools, webs
 
 Professional Experience:
 
-1. Software Developer
+1. Assistant Manager - Web Developer
 Company: PPFAS
 Duration: October 2024 - Present
 Work summary:

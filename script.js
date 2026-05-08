@@ -2,7 +2,7 @@
 const portfolioData = {
     experience: [
         {
-            title: "Software Developer",
+            title: "Assistant Manager - Web Developer",
             company: "PPFAS",
             period: "Oct 2024 - Present",
             description: "Building business-critical websites, portals, payments, and internal systems at PPFAS using Laravel, React, PHP, WordPress, AWS, and CI/CD-driven deployment workflows, with added design support through Figma and Photoshop.",
@@ -195,14 +195,14 @@ const portfolioData = {
 
 const resumeBuilderData = {
     name: "Jose Chacko",
-    role: "Software Developer | Full Stack Developer | React | Laravel | PHP | JavaScript",
+    role: "Assistant Manager - Web Developer | Full Stack Developer | React | Laravel | PHP | JavaScript",
     phone: "7977017155",
     email: "josejoy2216@gmail.com",
     location: "Mumbai, Maharashtra, India",
     portfolio: "https://www.josechacko.com",
     github: "https://github.com/josejoy2216",
     linkedin: "https://www.linkedin.com/in/josejoychacko/",
-    summary: "Software Developer with experience building production websites, payment workflows, admin portals, and internal systems using Laravel, React, PHP, JavaScript, WordPress, AWS, and CI/CD. Delivered measurable cost savings through practical full-stack execution.",
+    summary: "Assistant Manager - Web Developer with experience building production websites, payment workflows, admin portals, and internal systems using Laravel, React, PHP, JavaScript, WordPress, AWS, and CI/CD. Delivered measurable cost savings through practical full-stack execution.",
     skills: {
         languages: ["JavaScript", "PHP", "Java", "Python", "C#", "C", "C++"],
         frontend: ["HTML", "CSS", "Bootstrap", "React", "Next.js", "Material UI"],
