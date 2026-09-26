@@ -196,7 +196,6 @@ const portfolioData = {
 const resumeBuilderData = {
     name: "Jose Chacko",
     role: "Assistant Manager - Web Developer | Full Stack Developer | React | Laravel | PHP | JavaScript",
-    phone: "7977017155",
     email: "josejoy2216@gmail.com",
     location: "Mumbai, Maharashtra, India",
     portfolio: "https://www.josechacko.com",
@@ -531,7 +530,6 @@ function buildResumeDraft() {
                 <p class="resume-role">${resumeBuilderData.role}</p>
                 <p class="resume-contact">
                     ${resumeBuilderData.location} |
-                    <a href="tel:${resumeBuilderData.phone}">${resumeBuilderData.phone}</a> |
                     <a href="mailto:${resumeBuilderData.email}">${resumeBuilderData.email}</a>
                 </p>
                 <p class="resume-contact">
