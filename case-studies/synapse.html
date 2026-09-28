@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- @head:start -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SYNAPSE — Case study — Jose Chacko</title>
+  <meta name="description" content="SYNAPSE, an AI SaaS product prototype for LinkedIn personal branding: what is implemented, what is not yet verified live, and what is not built. A case study by Jose Chacko.">
+  <link rel="canonical" href="https://josechacko.com/case-studies/synapse.html">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#e9edf1" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e1319" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Jose Chacko">
+  <meta property="og:locale" content="en_IN">
+  <meta property="og:title" content="SYNAPSE — Case study — Jose Chacko">
+  <meta property="og:description" content="SYNAPSE, an AI SaaS product prototype for LinkedIn personal branding: what is implemented, what is not yet verified live, and what is not built. A case study by Jose Chacko.">
+  <meta property="og:url" content="https://josechacko.com/case-studies/synapse.html">
+  <meta property="og:image" content="https://josechacko.com/assets/img/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Jose Chacko — Developer by background. Product thinker by instinct.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SYNAPSE — Case study — Jose Chacko">
+  <meta name="twitter:description" content="SYNAPSE, an AI SaaS product prototype for LinkedIn personal branding: what is implemented, what is not yet verified live, and what is not built. A case study by Jose Chacko.">
+  <meta name="twitter:image" content="https://josechacko.com/assets/img/og-image.png">
+  <meta name="twitter:image:alt" content="Jose Chacko — Developer by background. Product thinker by instinct.">
+  <script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light'){d.setAttribute('data-theme',t);}}catch(e){}})();</script>
+  <link rel="preload" href="/assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/styles.css?v=20260927">
+  <link rel="stylesheet" href="/assets/css/case-study.css?v=20260927">
+  <script src="/assets/js/site.js?v=20260927" defer></script>
+  <script src="/assets/js/case-study.js?v=20260927" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CreativeWork","@id":"https://josechacko.com/case-studies/synapse.html#case-study","name":"SYNAPSE: an AI SaaS product prototype for LinkedIn personal branding","headline":"SYNAPSE: an AI SaaS product prototype for LinkedIn personal branding","description":"SYNAPSE, an AI SaaS product prototype for LinkedIn personal branding: what is implemented, what is not yet verified live, and what is not built. A case study by Jose Chacko.","url":"https://josechacko.com/case-studies/synapse.html","inLanguage":"en","author":{"@id":"https://josechacko.com/#person"},"isPartOf":{"@id":"https://josechacko.com/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://josechacko.com/"},{"@type":"ListItem","position":2,"name":"Case studies","item":"https://josechacko.com/case-studies/"},{"@type":"ListItem","position":3,"name":"SYNAPSE: an AI SaaS product prototype for LinkedIn personal branding","item":"https://josechacko.com/case-studies/synapse.html"}]},{"@type":"Person","@id":"https://josechacko.com/#person","name":"Jose Chacko","url":"https://josechacko.com/","jobTitle":"Assistant Manager – Web Developer","worksFor":{"@type":"Organization","name":"PPFAS"},"address":{"@type":"PostalAddress","addressLocality":"Mumbai","addressRegion":"Maharashtra","addressCountry":"IN"},"alumniOf":[{"@type":"CollegeOrUniversity","name":"Thakur Institute of Management Studies, Career Development & Research (TIMSCDR)"},{"@type":"CollegeOrUniversity","name":"Thakur Ramnarayan College of Arts & Commerce"}],"sameAs":["https://www.linkedin.com/in/josejoychacko/","https://github.com/josejoy2216","https://www.hackerrank.com/profile/josejoy567"],"knowsAbout":["PHP","Laravel","JavaScript","React","Node.js","WordPress","AWS","Figma"]}]}</script>
+<!-- @head:end -->
+</head>
+<body class="page-case" data-case-study="synapse">
+<!-- @header:start -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header" data-surface="stage">
+    <div class="container site-header__inner">
+      <a class="brand" href="/"><span class="brand__mark" aria-hidden="true">JC</span><span>Jose Chacko</span></a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="visually-hidden">Menu</span>
+        <svg class="icon-menu" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="/">Home</a></li>
+          <li><a class="site-nav__link" href="/about.html">About</a></li>
+          <li><a class="site-nav__link" href="/experience.html">Experience</a></li>
+          <li><a class="site-nav__link" href="/case-studies/" aria-current="true">Case Studies</a></li>
+          <li><a class="site-nav__link" href="/projects.html">Projects</a></li>
+          <li><a class="site-nav__link" href="/resume.html">Resume</a></li>
+          <li><a class="site-nav__link" href="/contact.html">Contact</a></li>
+          <li class="nav-theme">
+            <button class="icon-btn theme-toggle" type="button" aria-pressed="false" hidden>
+              <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+              <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+              <span class="visually-hidden theme-toggle__text">Dark theme</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+<!-- @header:end -->
+<!-- @main:start -->
+  <main id="main" tabindex="-1">
+    <section class="cs-hero stage" aria-labelledby="cs-title" data-stage-top>
+      <div class="hero__grid" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="container cs-hero__inner">
+        <div class="cs-hero__copy">
+          <p class="eyebrow"><a href="/case-studies/">Case studies</a> <span aria-hidden="true">/</span> SYNAPSE</p>
+          <h1 id="cs-title" data-src="ID-Y1">SYNAPSE: an AI SaaS product prototype for LinkedIn personal branding</h1>
+          <p class="lead" data-src="ID-Y23 ID-Y4 ID-Y5 ID-Y18 ID-Y12 ID-Y-status">Built in May–June 2026, SYNAPSE finds trending topics in a chosen professional niche and drafts three LinkedIn post variations in the user’s voice. Every post needs an explicit publish or schedule action, a step that is implemented but not verified live. It is not deployed and has no users.</p>
+          <div class="cs-hero__meta">
+            <span class="badge badge--prototype" data-src="ID-Y-status ID-Y17">Prototype · not deployed</span>
+            <span class="badge badge--plain" data-src="ID-Y23">May–June 2026</span>
+          </div>
+          <dl class="cs-facts">
+            <div>
+              <dt>Status</dt>
+              <dd data-src="ID-Y-status ID-Y17">Prototype, not deployed, no users</dd>
+            </div>
+            <div>
+              <dt>When</dt>
+              <dd data-src="ID-Y23">May–June 2026</dd>
+            </div>
+            <div>
+              <dt>Role</dt>
+              <dd data-src="ID-Y-status">Built the SYNAPSE prototype hands-on, using Claude Code as an AI coding assistant</dd>
+            </div>
+            <div>
+              <dt>Stack</dt>
+              <dd data-src="ID-Y2">Next.js, NestJS, PostgreSQL, Redis</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="cs-visual cs-visual--synapse">
+          <svg class="sy sy--hero dia" data-state="all" viewBox="0 0 396 494" role="img" aria-labelledby="sy-hero-t"><title id="sy-hero-t">SYNAPSE system, as the committed code shows it. Main flow: your niche (10 supported niches); trend discovery from Hacker News, Google News and LinkedIn hashtag RSS; AI generation of 3 variations per topic with OpenAI, Gemini or Claude; drafts you can edit, pick and archive; your approval, where you publish now or schedule; scheduling and LinkedIn text posts, both implemented but not verified live. The LinkedIn posting permission is not in the committed code. Beside the flow: LinkedIn sign-in asks for profile and email only; AI access needs your own AI API key unless an administrator grants access; your edits to AI drafts become a Brand DNA style profile after 3 or more edits, which feeds generation; a business layer of plans, admin, waitlist and teams; Razorpay payments, not verified live; incomplete: Stripe backend and developer API keys; not built: company pages, images in posts and LinkedIn Articles. Not deployed, no users, no published post.</title><defs><marker id="sy-ah-hero" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="d-head" d="M0 0L8 4L0 8z"/></marker></defs><g style="opacity: var(--sy-access)"><rect class="d-node d-how" x="240" y="12" width="144" height="42" rx="9"/><text class="d-title" x="252" y="27">LinkedIn sign-in</text><text x="252" y="39">asks for profile</text><text x="252" y="49">and email only</text><rect class="d-node d-how" x="240" y="68" width="144" height="42" rx="9"/><text class="d-title" x="252" y="83">AI access</text><text x="252" y="95">needs own AI key</text><text x="252" y="105">or admin grant</text><path class="d-edge" d="M240 89H232V138H226" marker-end="url(#sy-ah-hero)"/></g><g style="opacity: var(--sy-niche)"><rect class="d-node d-why" x="12" y="12" width="212" height="42" rx="9"/><text class="d-title" x="24" y="29">Your niche</text><text x="24" y="43">10 supported niches</text><path class="d-edge" d="M36 54V66" marker-end="url(#sy-ah-hero)"/></g><g style="opacity: var(--sy-flow)"><rect class="d-node d-how" x="12" y="68" width="212" height="42" rx="9"/><text class="d-title" x="24" y="83">Trend discovery</text><text x="24" y="95">Hacker News · Google News</text><text x="24" y="105">LinkedIn hashtag RSS</text><path class="d-edge" d="M36 110V122" marker-end="url(#sy-ah-hero)"/><rect class="d-node d-how" x="12" y="124" width="212" height="42" rx="9"/><text class="d-title" x="24" y="139">AI generation</text><text x="24" y="151">3 variations per topic</text><text x="24" y="161">OpenAI · Gemini · Claude</text><path class="d-edge" d="M36 166V178" marker-end="url(#sy-ah-hero)"/><rect class="d-node d-how" x="12" y="180" width="212" height="42" rx="9"/><text class="d-title" x="24" y="197">Drafts</text><text x="24" y="211">edit · pick · archive</text></g><g style="opacity: var(--sy-voice)"><rect class="d-node d-how" x="240" y="124" width="144" height="42" rx="9"/><text class="d-title" x="252" y="139">Brand DNA</text><text x="252" y="151">style profile</text><text x="252" y="161">after 3+ edits</text><rect class="d-node d-why" x="240" y="180" width="144" height="42" rx="9"/><text class="d-title" x="252" y="197">Your edits</text><text x="252" y="211">changes to drafts</text><path class="d-edge" d="M224 201H238" marker-end="url(#sy-ah-hero)"/><path class="d-edge" d="M312 180V168" marker-end="url(#sy-ah-hero)"/><path class="d-edge" d="M240 152H226" marker-end="url(#sy-ah-hero)"/></g><g style="opacity: var(--sy-approve)"><path class="d-edge" d="M36 222V234" marker-end="url(#sy-ah-hero)"/><rect class="d-node d-why" x="12" y="236" width="212" height="42" rx="9"/><text class="d-title" x="24" y="253">Your approval</text><text x="24" y="267">publish now or schedule</text></g><g style="opacity: var(--sy-post)"><path class="d-edge d-dash" d="M36 278V290" marker-end="url(#sy-ah-hero)"/><rect class="d-node d-how d-dash" x="12" y="292" width="212" height="42" rx="9"/><text class="d-title" x="24" y="307">Scheduling</text><text x="24" y="319">Bull delayed jobs</text><text x="24" y="329">not verified live</text><path class="d-edge d-dash" d="M36 334V346" marker-end="url(#sy-ah-hero)"/><rect class="d-node d-how d-dash" x="12" y="348" width="212" height="42" rx="9"/><text class="d-title" x="24" y="363">LinkedIn</text><text x="24" y="375">text posts</text><text x="24" y="385">not verified live</text></g><g style="opacity: var(--sy-biz)"><rect class="d-node d-how" x="240" y="236" width="144" height="42" rx="9"/><text class="d-title" x="252" y="251">Business layer</text><text x="252" y="263">plans · admin</text><text x="252" y="273">waitlist · teams</text><rect class="d-node d-how d-dash" x="240" y="292" width="144" height="42" rx="9"/><text class="d-title" x="252" y="307">Payments</text><text x="252" y="319">Razorpay</text><text x="252" y="329">not verified live</text><rect class="d-node d-how d-dashdot" x="240" y="348" width="144" height="42" rx="9"/><text class="d-title" x="252" y="363">Incomplete</text><text x="252" y="375">Stripe backend</text><text x="252" y="385">dev API keys</text><rect class="d-node d-ink d-ghost" x="240" y="404" width="144" height="58" rx="9"/><text class="d-title" x="252" y="421">Not built</text><text x="252" y="434">company pages</text><text x="252" y="445">images in posts</text><text x="252" y="456">LinkedIn Articles</text></g><g style="opacity: var(--sy-tag)"><path class="d-edge d-ghost" d="M60 390V402"/><rect class="d-node d-why d-ghost" x="12" y="402" width="212" height="32" rx="7"/><text class="d-warn" x="24" y="415">POSTING PERMISSION NOT</text><text class="d-warn" x="24" y="427">IN COMMITTED CODE</text></g><g style="opacity: var(--sy-out)"><path class="d-edge d-ghost" d="M12 448H224"/><text class="d-read" x="12" y="462">NOT DEPLOYED · NO USERS</text><text class="d-read" x="12" y="476">NO PUBLISHED POST</text></g></svg>
+          <ul class="status-key" aria-label="Status key"><li class="status-key__ok">Implemented</li><li class="status-key__unv">Implemented — not verified live</li><li class="status-key__inc">Incomplete</li><li class="status-key__no">Not built</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="container cs-glance">
+      <ol class="rail rail--6" aria-label="Case study at a glance">
+        <li data-src="ID-Y21 ID-Y-status"><span class="rail__label">Problem</span> The product’s own framing: help professionals show up on LinkedIn consistently without hours of content work. Not tested with users.</li>
+        <li data-src="ID-Y22 ID-Y18"><span class="rail__label">Thinking</span> A guided workflow instead of a blank prompt, with the user approving every post.</li>
+        <li data-src="ID-Y4 ID-Y5 ID-Y9"><span class="rail__label">Solution</span> Niche-filtered trends, three post variations per topic, and a style profile learned from edits.</li>
+        <li data-src="ID-Y2"><span class="rail__label">Execution</span> A Next.js web app, a NestJS API, PostgreSQL and a Redis-backed job queue in one monorepo.</li>
+        <li data-src="ID-Y-status ID-Y17 ID-Y12"><span class="rail__label">Impact</span> None yet: not deployed, no users, no evidence of any published post.</li>
+        <li data-src="ID-Y12"><span class="rail__label">Learning</span> Check the riskiest dependency first: publishing needs a LinkedIn permission the committed code never requested.</li>
+      </ol>
+    </div>
+
+    <div class="chapter-bar" aria-hidden="true" hidden>
+      <div class="container chapter-bar__inner"><span class="chapter-bar__num"></span> <span class="chapter-bar__name"></span></div>
+      <span class="chapter-bar__progress"></span>
+    </div>
+
+    <div class="container section cs-layout">
+      <div class="cs-aside">
+        <div class="cs-aside__visual" aria-hidden="true"><svg class="sy sy--aside dia" data-state="all" viewBox="0 0 396 494" aria-hidden="true" focusable="false"><defs><marker id="sy-ah-aside-all" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="d-head" d="M0 0L8 4L0 8z"/></marker></defs><g style="opacity: var(--sy-access)"><rect class="d-node d-how" x="240" y="12" width="144" height="42" rx="9"/><text class="d-title" x="252" y="27">LinkedIn sign-in</text><text x="252" y="39">asks for profile</text><text x="252" y="49">and email only</text><rect class="d-node d-how" x="240" y="68" width="144" height="42" rx="9"/><text class="d-title" x="252" y="83">AI access</text><text x="252" y="95">needs own AI key</text><text x="252" y="105">or admin grant</text><path class="d-edge" d="M240 89H232V138H226" marker-end="url(#sy-ah-aside-all)"/></g><g style="opacity: var(--sy-niche)"><rect class="d-node d-why" x="12" y="12" width="212" height="42" rx="9"/><text class="d-title" x="24" y="29">Your niche</text><text x="24" y="43">10 supported niches</text><path class="d-edge" d="M36 54V66" marker-end="url(#sy-ah-aside-all)"/></g><g style="opacity: var(--sy-flow)"><rect class="d-node d-how" x="12" y="68" width="212" height="42" rx="9"/><text class="d-title" x="24" y="83">Trend discovery</text><text x="24" y="95">Hacker News · Google News</text><text x="24" y="105">LinkedIn hashtag RSS</text><path class="d-edge" d="M36 110V122" marker-end="url(#sy-ah-aside-all)"/><rect class="d-node d-how" x="12" y="124" width="212" height="42" rx="9"/><text class="d-title" x="24" y="139">AI generation</text><text x="24" y="151">3 variations per topic</text><text x="24" y="161">OpenAI · Gemini · Claude</text><path class="d-edge" d="M36 166V178" marker-end="url(#sy-ah-aside-all)"/><rect class="d-node d-how" x="12" y="180" width="212" height="42" rx="9"/><text class="d-title" x="24" y="197">Drafts</text><text x="24" y="211">edit · pick · archive</text></g><g style="opacity: var(--sy-voice)"><rect class="d-node d-how" x="240" y="124" width="144" height="42" rx="9"/><text class="d-title" x="252" y="139">Brand DNA</text><text x="252" y="151">style profile</text><text x="252" y="161">after 3+ edits</text><rect class="d-node d-why" x="240" y="180" width="144" height="42" rx="9"/><text class="d-title" x="252" y="197">Your edits</text><text x="252" y="211">changes to drafts</text><path class="d-edge" d="M224 201H238" marker-end="url(#sy-ah-aside-all)"/><path class="d-edge" d="M312 180V168" marker-end="url(#sy-ah-aside-all)"/><path class="d-edge" d="M240 152H226" marker-end="url(#sy-ah-aside-all)"/></g><g style="opacity: var(--sy-approve)"><path class="d-edge" d="M36 222V234" marker-end="url(#sy-ah-aside-all)"/><rect class="d-node d-why" x="12" y="236" width="212" height="42" rx="9"/><text class="d-title" x="24" y="253">Your approval</text><text x="24" y="267">publish now or schedule</text></g><g style="opacity: var(--sy-post)"><path class="d-edge d-dash" d="M36 278V290" marker-end="url(#sy-ah-aside-all)"/><rect class="d-node d-how d-dash" x="12" y="292" width="212" height="42" rx="9"/><text class="d-title" x="24" y="307">Scheduling</text><text x="24" y="319">Bull delayed jobs</text><text x="24" y="329">not verified live</text><path class="d-edge d-dash" d="M36 334V346" marker-end="url(#sy-ah-aside-all)"/><rect class="d-node d-how d-dash" x="12" y="348" width="212" height="42" rx="9"/><text class="d-title" x="24" y="363">LinkedIn</text><text x="24" y="375">text posts</text><text x="24" y="385">not verified live</text></g><g style="opacity: var(--sy-biz)"><rect class="d-node d-how" x="240" y="236" width="144" height="42" rx="9"/><text class="d-title" x="252" y="251">Business layer</text><text x="252" y="263">plans · admin</text><text x="252" y="273">waitlist · teams</text><rect class="d-node d-how d-dash" x="240" y="292" width="144" height="42" rx="9"/><text class="d-title" x="252" y="307">Payments</text><text x="252" y="319">Razorpay</text><text x="252" y="329">not verified live</text><rect class="d-node d-how d-dashdot" x="240" y="348" width="144" height="42" rx="9"/><text class="d-title" x="252" y="363">Incomplete</text><text x="252" y="375">Stripe backend</text><text x="252" y="385">dev API keys</text><rect class="d-node d-ink d-ghost" x="240" y="404" width="144" height="58" rx="9"/><text class="d-title" x="252" y="421">Not built</text><text x="252" y="434">company pages</text><text x="252" y="445">images in posts</text><text x="252" y="456">LinkedIn Articles</text></g><g style="opacity: var(--sy-tag)"><path class="d-edge d-ghost" d="M60 390V402"/><rect class="d-node d-why d-ghost" x="12" y="402" width="212" height="32" rx="7"/><text class="d-warn" x="24" y="415">POSTING PERMISSION NOT</text><text class="d-warn" x="24" y="427">IN COMMITTED CODE</text></g><g style="opacity: var(--sy-out)"><path class="d-edge d-ghost" d="M12 448H224"/><text class="d-read" x="12" y="462">NOT DEPLOYED · NO USERS</text><text class="d-read" x="12" y="476">NO PUBLISHED POST</text></g></svg></div>
+        <nav class="cs-toc" aria-label="On this page"><ol><li class="cs-toc__chapter" data-chapter="problem"><a class="cs-toc__name" href="#chapter-problem"><span class="cs-toc__num">1</span> Problem</a><ol><li><a href="#context">Context</a></li><li><a href="#problem">Problem</a></li><li><a href="#users">Users</a></li></ol></li><li class="cs-toc__chapter" data-chapter="thinking"><a class="cs-toc__name" href="#chapter-thinking"><span class="cs-toc__num">2</span> Thinking</a><ol><li><a href="#approach">Approach</a></li></ol></li><li class="cs-toc__chapter" data-chapter="execution"><a class="cs-toc__name" href="#chapter-execution"><span class="cs-toc__num">3</span> Execution</a><ol><li><a href="#solution">Solution</a></li><li><a href="#decisions">What the code enforces</a></li><li><a href="#execution">Technical execution</a></li></ol></li><li class="cs-toc__chapter" data-chapter="iteration"><a class="cs-toc__name" href="#chapter-iteration"><span class="cs-toc__num">4</span> Iteration</a><ol><li><a href="#iteration">How it changed</a></li></ol></li><li class="cs-toc__chapter" data-chapter="impact"><a class="cs-toc__name" href="#chapter-impact"><span class="cs-toc__num">5</span> Impact</a><ol><li><a href="#outcome">Outcome</a></li><li><a href="#evidence">What the evidence showed</a></li><li><a href="#learned">What I learned</a></li></ol></li></ol></nav>
+      </div>
+      <div class="cs-main">
+        <div class="chapter" id="chapter-problem" data-chapter="problem" data-index="1" role="group" aria-labelledby="chapter-problem-label">
+          <p class="chapter__label" id="chapter-problem-label"><span class="chapter__num">1</span> <span class="chapter__name">Problem</span></p>
+          <div class="chapter__figure"><svg class="sy dia" data-state="1" viewBox="0 0 396 494" aria-hidden="true" focusable="false"><defs><marker id="sy-ah-sy-1" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="d-head" d="M0 0L8 4L0 8z"/></marker></defs><g style="opacity: var(--sy-access)"><rect class="d-node d-how" x="240" y="12" width="144" height="42" rx="9"/><text class="d-title" x="252" y="27">LinkedIn sign-in</text><text x="252" y="39">asks for profile</text><text x="252" y="49">and email only</text><rect class="d-node d-how" x="240" y="68" width="144" height="42" rx="9"/><text class="d-title" x="252" y="83">AI access</text><text x="252" y="95">needs own AI key</text><text x="252" y="105">or admin grant</text><path class="d-edge" d="M240 89H232V138H226" marker-end="url(#sy-ah-sy-1)"/></g><g style="opacity: var(--sy-niche)"><rect class="d-node d-why" x="12" y="12" width="212" height="42" rx="9"/><text class="d-title" x="24" y="29">Your niche</text><text x="24" y="43">10 supported niches</text><path class="d-edge" d="M36 54V66" marker-end="url(#sy-ah-sy-1)"/></g><g style="opacity: var(--sy-flow)"><rect class="d-node d-how" x="12" y="68" width="212" height="42" rx="9"/><text class="d-title" x="24" y="83">Trend discovery</text><text x="24" y="95">Hacker News · Google News</text><text x="24" y="105">LinkedIn hashtag RSS</text><path class="d-edge" d="M36 110V122" marker-end="url(#sy-ah-sy-1)"/><rect class="d-node d-how" x="12" y="124" width="212" height="42" rx="9"/><text class="d-title" x="24" y="139">AI generation</text><text x="24" y="151">3 variations per topic</text><text x="24" y="161">OpenAI · Gemini · Claude</text><path class="d-edge" d="M36 166V178" marker-end="url(#sy-ah-sy-1)"/><rect class="d-node d-how" x="12" y="180" width="212" height="42" rx="9"/><text class="d-title" x="24" y="197">Drafts</text><text x="24" y="211">edit · pick · archive</text></g><g style="opacity: var(--sy-voice)"><rect class="d-node d-how" x="240" y="124" width="144" height="42" rx="9"/><text class="d-title" x="252" y="139">Brand DNA</text><text x="252" y="151">style profile</text><text x="252" y="161">after 3+ edits</text><rect class="d-node d-why" x="240" y="180" width="144" height="42" rx="9"/><text class="d-title" x="252" y="197">Your edits</text><text x="252" y="211">changes to drafts</text><path class="d-edge" d="M224 201H238" marker-end="url(#sy-ah-sy-1)"/><path class="d-edge" d="M312 180V168" marker-end="url(#sy-ah-sy-1)"/><path class="d-edge" d="M240 152H226" marker-end="url(#sy-ah-sy-1)"/></g><g style="opacity: var(--sy-approve)"><path class="d-edge" d="M36 222V234" marker-end="url(#sy-ah-sy-1)"/><rect class="d-node d-why" x="12" y="236" width="212" height="42" rx="9"/><text class="d-title" x="24" y="253">Your approval</text><text x="24" y="267">publish now or schedule</text></g><g style="opacity: var(--sy-post)"><path class="d-edge d-dash" d="M36 278V290" marker-end="url(#sy-ah-sy-1)"/><rect class="d-node d-how d-dash" x="12" y="292" width="212" height="42" rx="9"/><text class="d-title" x="24" y="307">Scheduling</text><text x="24" y="319">Bull delayed jobs</text><text x="24" y="329">not verified live</text><path class="d-edge d-dash" d="M36 334V346" marker-end="url(#sy-ah-sy-1)"/><rect class="d-node d-how d-dash" x="12" y="348" width="212" height="42" rx="9"/><text class="d-title" x="24" y="363">LinkedIn</text><text x="24" y="375">text posts</text><text x="24" y="385">not verified live</text></g><g style="opacity: var(--sy-biz)"><rect class="d-node d-how" x="240" y="236" width="144" height="42" rx="9"/><text class="d-title" x="252" y="251">Business layer</text><text x="252" y="263">plans · admin</text><text x="252" y="273">waitlist · teams</text><rect class="d-node d-how d-dash" x="240" y="292" width="144" height="42" rx="9"/><text class="d-title" x="252" y="307">Payments</text><text x="252" y="319">Razorpay</text><text x="252" y="329">not verified live</text><rect class="d-node d-how d-dashdot" x="240" y="348" width="144" height="42" rx="9"/><text class="d-title" x="252" y="363">Incomplete</text><text x="252" y="375">Stripe backend</text><text x="252" y="385">dev API keys</text><rect class="d-node d-ink d-ghost" x="240" y="404" width="144" height="58" rx="9"/><text class="d-title" x="252" y="421">Not built</text><text x="252" y="434">company pages</text><text x="252" y="445">images in posts</text><text x="252" y="456">LinkedIn Articles</text></g><g style="opacity: var(--sy-tag)"><path class="d-edge d-ghost" d="M60 390V402"/><rect class="d-node d-why d-ghost" x="12" y="402" width="212" height="32" rx="7"/><text class="d-warn" x="24" y="415">POSTING PERMISSION NOT</text><text class="d-warn" x="24" y="427">IN COMMITTED CODE</text></g><g style="opacity: var(--sy-out)"><path class="d-edge d-ghost" d="M12 448H224"/><text class="d-read" x="12" y="462">NOT DEPLOYED · NO USERS</text><text class="d-read" x="12" y="476">NO PUBLISHED POST</text></g></svg></div>
+          <section class="cs-section" id="context" aria-labelledby="context-title">
+            <span class="cs-kicker">01 · Context</span>
+            <h2 id="context-title" data-src="ID-Y23">Built May–June 2026</h2>
+            <p data-src="ID-Y1 ID-Y4 ID-Y10">SYNAPSE is a web app for LinkedIn personal branding. It surfaces trending topics filtered to a professional niche, generates three post variations in the user’s voice with OpenAI, Gemini or Claude models, and learns the user’s writing style over time.</p>
+            <p><span data-src="ID-Y-status"><strong>My role:</strong> built the SYNAPSE prototype hands-on, using Claude Code as an AI coding assistant.</span> <span data-src="ID-Y23">The first commit is dated 29 May 2026 and the last 20 June 2026.</span></p>
+          </section>
+          <section class="cs-section" id="problem" aria-labelledby="problem-title">
+            <span class="cs-kicker">02 · Problem</span>
+            <h2 id="problem-title">Showing up on LinkedIn consistently, without hours of content work</h2>
+            <p data-src="ID-Y21">The landing page states the problem from the user’s side: SYNAPSE “tracks what’s trending in your niche, writes posts in your voice, and helps you show up consistently — without spending hours on content.”</p>
+            <p data-src="ID-Y22">Its FAQ separates it from a general chatbot: “ChatGPT is a blank canvas… It’s a workflow, not just a prompt.”</p>
+            <p data-src="ID-Y21 ID-Y-status">Both are the product’s own framing. The problem has not been tested with users.</p>
+          </section>
+          <section class="cs-section" id="users" aria-labelledby="users-title">
+            <span class="cs-kicker">03 · Users</span>
+            <h2 id="users-title" data-src="ID-Y19 ID-Y-status">Ten supported niches, no users</h2>
+            <p data-src="ID-Y19 ID-Y1 ID-Y4">SYNAPSE supports these niches, and trend discovery is filtered to the niche(s) the user selects:</p>
+            <ul class="tags" data-src="ID-Y19">
+              <li>AI/ML Engineer</li>
+              <li>Product Manager</li>
+              <li>Software Engineer</li>
+              <li>Founder</li>
+              <li>Marketer</li>
+              <li>Designer</li>
+              <li>Data Scientist</li>
+              <li>Consultant</li>
+              <li>Recruiter</li>
+              <li>Educator</li>
+            </ul>
+            <p><span data-src="ID-Y-status">SYNAPSE has no users and no user feedback.</span> <span data-src="ID-Y20">A landing page with a waitlist exists, but the product has not launched.</span></p>
+          </section>
+        </div>
+        <div class="chapter" id="chapter-thinking" data-chapter="thinking" data-index="2" role="group" aria-labelledby="chapter-thinking-label">
+          <p class="chapter__label" id="chapter-thinking-label"><span class="chapter__num">2</span> <span class="chapter__name">Thinking</span></p>
+          <div class="chapter__figure"><svg class="sy dia" data-state="2" viewBox="0 0 396 494" aria-hidden="true" focusable="false"><defs><marker id="sy-ah-sy-2" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="d-head" d="M0 0L8 4L0 8z"/></marker></defs><g style="opacity: var(--sy-access)"><rect class="d-node d-how" x="240" y="12" width="144" height="42" rx="9"/><text class="d-title" x="252" y="27">LinkedIn sign-in</text><text x="252" y="39">asks for profile</text><text x="252" y="49">and email only</text><rect class="d-node d-how" x="240" y="68" width="144" height="42" rx="9"/><text class="d-title" x="252" y="83">AI access</text><text x="252" y="95">needs own AI key</text><text x="252" y="105">or admin grant</text><path class="d-edge" d="M240 89H232V138H226" marker-end="url(#sy-ah-sy-2)"/></g><g style="opacity: var(--sy-niche)"><rect class="d-node d-why" x="12" y="12" width="212" height="42" rx="9"/><text class="d-title" x="24" y="29">Your niche</text><text x="24" y="43">10 supported niches</text><path class="d-edge" d="M36 54V66" marker-end="url(#sy-ah-sy-2)"/></g><g style="opacity: var(--sy-flow)"><rect class="d-node d-how" x="12" y="68" width="212" height="42" rx="9"/><text class="d-title" x="24" y="83">Trend discovery</text><text x="24" y="95">Hacker News · Google News</text><text x="24" y="105">LinkedIn hashtag RSS</text><path class="d-edge" d="M36 110V122" marker-end="url(#sy-ah-sy-2)"/><rect class="d-node d-how" x="12" y="124" width="212" height="42" rx="9"/><text class="d-title" x="24" y="139">AI generation</text><text x="24" y="151">3 variations per topic</text><text x="24" y="161">OpenAI · Gemini · Claude</text><path class="d-edge" d="M36 166V178" marker-end="url(#sy-ah-sy-2)"/><rect class="d-node d-how" x="12" y="180" width="212" height="42" rx="9"/><text class="d-title" x="24" y="197">Drafts</text><text x="24" y="211">edit · pick · archive</text></g><g style="opacity: var(--sy-voice)"><rect class="d-node d-how" x="240" y="124" width="144" height="42" rx="9"/><text class="d-title" x="252" y="139">Brand DNA</text><text x="252" y="151">style profile</text><text x="252" y="161">after 3+ edits</text><rect class="d-node d-why" x="240" y="180" width="144" height="42" rx="9"/><text class="d-title" x="252" y="197">Your edits</text><text x="252" y="211">changes to drafts</text><path class="d-edge" d="M224 201H238" marker-end="url(#sy-ah-sy-2)"/><path class="d-edge" d="M312 180V168" marker-end="url(#sy-ah-sy-2)"/><path class="d-edge" d="M240 152H226" marker-end="url(#sy-ah-sy-2)"/></g><g style="opacity: var(--sy-approve)"><path class="d-edge" d="M36 222V234" marker-end="url(#sy-ah-sy-2)"/><rect class="d-node d-why" x="12" y="236" width="212" height="42" rx="9"/><text class="d-title" x="24" y="253">Your approval</text><text x="24" y="267">publish now or schedule</text></g><g style="opacity: var(--sy-post)"><path class="d-edge d-dash" d="M36 278V290" marker-end="url(#sy-ah-sy-2)"/><rect class="d-node d-how d-dash" x="12" y="292" width="212" height="42" rx="9"/><text class="d-title" x="24" y="307">Scheduling</text><text x="24" y="319">Bull delayed jobs</text><text x="24" y="329">not verified live</text><path class="d-edge d-dash" d="M36 334V346" marker-end="url(#sy-ah-sy-2)"/><rect class="d-node d-how d-dash" x="12" y="348" width="212" height="42" rx="9"/><text class="d-title" x="24" y="363">LinkedIn</text><text x="24" y="375">text posts</text><text x="24" y="385">not verified live</text></g><g style="opacity: var(--sy-biz)"><rect class="d-node d-how" x="240" y="236" width="144" height="42" rx="9"/><text class="d-title" x="252" y="251">Business layer</text><text x="252" y="263">plans · admin</text><text x="252" y="273">waitlist · teams</text><rect class="d-node d-how d-dash" x="240" y="292" width="144" height="42" rx="9"/><text class="d-title" x="252" y="307">Payments</text><text x="252" y="319">Razorpay</text><text x="252" y="329">not verified live</text><rect class="d-node d-how d-dashdot" x="240" y="348" width="144" height="42" rx="9"/><text class="d-title" x="252" y="363">Incomplete</text><text x="252" y="375">Stripe backend</text><text x="252" y="385">dev API keys</text><rect class="d-node d-ink d-ghost" x="240" y="404" width="144" height="58" rx="9"/><text class="d-title" x="252" y="421">Not built</text><text x="252" y="434">company pages</text><text x="252" y="445">images in posts</text><text x="252" y="456">LinkedIn Articles</text></g><g style="opacity: var(--sy-tag)"><path class="d-edge d-ghost" d="M60 390V402"/><rect class="d-node d-why d-ghost" x="12" y="402" width="212" height="32" rx="7"/><text class="d-warn" x="24" y="415">POSTING PERMISSION NOT</text><text class="d-warn" x="24" y="427">IN COMMITTED CODE</text></g><g style="opacity: var(--sy-out)"><path class="d-edge d-ghost" d="M12 448H224"/><text class="d-read" x="12" y="462">NOT DEPLOYED · NO USERS</text><text class="d-read" x="12" y="476">NO PUBLISHED POST</text></g></svg></div>
+          <section class="cs-section" id="approach" aria-labelledby="approach-title">
+            <span class="cs-kicker">04 · Approach</span>
+            <h2 id="approach-title">A workflow, not a blank prompt</h2>
+            <p data-src="ID-Y22 ID-Y18">The product is a sequence of steps, with the user’s approval as a hard stop before anything reaches LinkedIn.</p>
+            <ol class="flow flow--row" aria-label="SYNAPSE content workflow">
+              <li data-src="ID-Y4"><strong>Find trends</strong><span>Filtered by niche</span></li>
+              <li data-src="ID-Y5"><strong>Generate 3 variations</strong><span>In the user’s voice</span></li>
+              <li data-src="ID-Y9"><strong>User edits</strong><span>3+ edits feed a style profile</span></li>
+              <li data-src="ID-Y18"><strong>User approves</strong><span>Nothing posts without it</span></li>
+              <li class="flow__muted" data-src="ID-Y12"><strong>Publish now or schedule</strong><span>Implemented — not verified live</span></li>
+            </ol>
+            <p data-src="ID-Y12">The last step depends on a LinkedIn posting permission that the committed code does not request (see <a href="#publishing-gap-title">the publishing gap</a>).</p>
+          </section>
+        </div>
+        <div class="chapter" id="chapter-execution" data-chapter="execution" data-index="3" role="group" aria-labelledby="chapter-execution-label">
+          <p class="chapter__label" id="chapter-execution-label"><span class="chapter__num">3</span> <span class="chapter__name">Execution</span></p>
+          <div class="chapter__figure"><svg class="sy dia" data-state="3" viewBox="0 0 396 494" aria-hidden="true" focusable="false"><defs><marker id="sy-ah-sy-3" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="d-head" d="M0 0L8 4L0 8z"/></marker></defs><g style="opacity: var(--sy-access)"><rect class="d-node d-how" x="240" y="12" width="144" height="42" rx="9"/><text class="d-title" x="252" y="27">LinkedIn sign-in</text><text x="252" y="39">asks for profile</text><text x="252" y="49">and email only</text><rect class="d-node d-how" x="240" y="68" width="144" height="42" rx="9"/><text class="d-title" x="252" y="83">AI access</text><text x="252" y="95">needs own AI key</text><text x="252" y="105">or admin grant</text><path class="d-edge" d="M240 89H232V138H226" marker-end="url(#sy-ah-sy-3)"/></g><g style="opacity: var(--sy-niche)"><rect class="d-node d-why" x="12" y="12" width="212" height="42" rx="9"/><text class="d-title" x="24" y="29">Your niche</text><text x="24" y="43">10 supported niches</text><path class="d-edge" d="M36 54V66" marker-end="url(#sy-ah-sy-3)"/></g><g style="opacity: var(--sy-flow)"><rect class="d-node d-how" x="12" y="68" width="212" height="42" rx="9"/><text class="d-title" x="24" y="83">Trend discovery</text><text x="24" y="95">Hacker News · Google News</text><text x="24" y="105">LinkedIn hashtag RSS</text><path class="d-edge" d="M36 110V122" marker-end="url(#sy-ah-sy-3)"/><rect class="d-node d-how" x="12" y="124" width="212" height="42" rx="9"/><text class="d-title" x="24" y="139">AI generation</text><text x="24" y="151">3 variations per topic</text><text x="24" y="161">OpenAI · Gemini · Claude</text><path class="d-edge" d="M36 166V178" marker-end="url(#sy-ah-sy-3)"/><rect class="d-node d-how" x="12" y="180" width="212" height="42" rx="9"/><text class="d-title" x="24" y="197">Drafts</text><text x="24" y="211">edit · pick · archive</text></g><g style="opacity: var(--sy-voice)"><rect class="d-node d-how" x="240" y="124" width="144" height="42" rx="9"/><text class="d-title" x="252" y="139">Brand DNA</text><text x="252" y="151">style profile</text><text x="252" y="161">after 3+ edits</text><rect class="d-node d-why" x="240" y="180" width="144" height="42" rx="9"/><text class="d-title" x="252" y="197">Your edits</text><text x="252" y="211">changes to drafts</text><path class="d-edge" d="M224 201H238" marker-end="url(#sy-ah-sy-3)"/><path class="d-edge" d="M312 180V168" marker-end="url(#sy-ah-sy-3)"/><path class="d-edge" d="M240 152H226" marker-end="url(#sy-ah-sy-3)"/></g><g style="opacity: var(--sy-approve)"><path class="d-edge" d="M36 222V234" marker-end="url(#sy-ah-sy-3)"/><rect class="d-node d-why" x="12" y="236" width="212" height="42" rx="9"/><text class="d-title" x="24" y="253">Your approval</text><text x="24" y="267">publish now or schedule</text></g><g style="opacity: var(--sy-post)"><path class="d-edge d-dash" d="M36 278V290" marker-end="url(#sy-ah-sy-3)"/><rect class="d-node d-how d-dash" x="12" y="292" width="212" height="42" rx="9"/><text class="d-title" x="24" y="307">Scheduling</text><text x="24" y="319">Bull delayed jobs</text><text x="24" y="329">not verified live</text><path class="d-edge d-dash" d="M36 334V346" marker-end="url(#sy-ah-sy-3)"/><rect class="d-node d-how d-dash" x="12" y="348" width="212" height="42" rx="9"/><text class="d-title" x="24" y="363">LinkedIn</text><text x="24" y="375">text posts</text><text x="24" y="385">not verified live</text></g><g style="opacity: var(--sy-biz)"><rect class="d-node d-how" x="240" y="236" width="144" height="42" rx="9"/><text class="d-title" x="252" y="251">Business layer</text><text x="252" y="263">plans · admin</text><text x="252" y="273">waitlist · teams</text><rect class="d-node d-how d-dash" x="240" y="292" width="144" height="42" rx="9"/><text class="d-title" x="252" y="307">Payments</text><text x="252" y="319">Razorpay</text><text x="252" y="329">not verified live</text><rect class="d-node d-how d-dashdot" x="240" y="348" width="144" height="42" rx="9"/><text class="d-title" x="252" y="363">Incomplete</text><text x="252" y="375">Stripe backend</text><text x="252" y="385">dev API keys</text><rect class="d-node d-ink d-ghost" x="240" y="404" width="144" height="58" rx="9"/><text class="d-title" x="252" y="421">Not built</text><text x="252" y="434">company pages</text><text x="252" y="445">images in posts</text><text x="252" y="456">LinkedIn Articles</text></g><g style="opacity: var(--sy-tag)"><path class="d-edge d-ghost" d="M60 390V402"/><rect class="d-node d-why d-ghost" x="12" y="402" width="212" height="32" rx="7"/><text class="d-warn" x="24" y="415">POSTING PERMISSION NOT</text><text class="d-warn" x="24" y="427">IN COMMITTED CODE</text></g><g style="opacity: var(--sy-out)"><path class="d-edge d-ghost" d="M12 448H224"/><text class="d-read" x="12" y="462">NOT DEPLOYED · NO USERS</text><text class="d-read" x="12" y="476">NO PUBLISHED POST</text></g></svg></div>
+          <section class="cs-section" id="solution" aria-labelledby="solution-title">
+            <span class="cs-kicker">05 · Solution</span>
+            <h2 id="solution-title">What exists in the code, and what does not</h2>
+            <h3>Architecture</h3>
+            <ul class="arch">
+              <li data-src="ID-Y2"><strong>Web app</strong><span>Next.js 16, React 19 and Tailwind 4</span></li>
+              <li data-src="ID-Y2"><strong>API</strong><span>NestJS 11, documented with Swagger</span></li>
+              <li data-src="ID-Y2"><strong>Database</strong><span>PostgreSQL 16, accessed through Prisma</span></li>
+              <li data-src="ID-Y2 ID-Y4 ID-Y12"><strong>Queue and cache</strong><span>Redis with Bull for scheduled jobs; trend caching</span></li>
+              <li data-src="ID-Y10 ID-Y7"><strong>AI providers</strong><span>OpenAI, Gemini (default) and Claude; gpt-image-1 for images</span></li>
+              <li data-src="ID-Y13 ID-Y15"><strong>Payments</strong><span>Razorpay subscriptions (not verified live); Stripe backend only</span></li>
+            </ul>
+            <h3>Feature status</h3>
+            <p>Each feature is placed in one of four groups, based on what the committed code shows. The diagram uses the same four styles, and names the status in words.</p>
+            <ul class="status-key" aria-label="Status key"><li class="status-key__ok">Implemented</li><li class="status-key__unv">Implemented — not verified live</li><li class="status-key__inc">Incomplete</li><li class="status-key__no">Not built</li></ul>
+            <div class="table-wrap">
+              <table class="table table--stack">
+                <caption>What is built — and what is not</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Feature</th>
+                    <th scope="col">What the code shows</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="rowgroup" colspan="2"><span class="outcome outcome--worked">Implemented</span></th>
+                  </tr>
+                  <tr data-src="ID-Y3">
+                    <th scope="row">LinkedIn sign-in</th>
+                    <td data-label="What the code shows">OAuth asking only for profile and email; session in an HttpOnly cookie</td>
+                  </tr>
+                  <tr data-src="ID-Y4">
+                    <th scope="row">Trend discovery</th>
+                    <td data-label="What the code shows">Hacker News, Google News, LinkedIn hashtag RSS; refreshed every 6–8 hours; scored and cached</td>
+                  </tr>
+                  <tr data-src="ID-Y5">
+                    <th scope="row">Post generation</th>
+                    <td data-label="What the code shows">Direct Insight, Story Hook and Provocative Question variations</td>
+                  </tr>
+                  <tr data-src="ID-Y6">
+                    <th scope="row">Article drafts</th>
+                    <td data-label="What the code shows">Long-form, 600–1,200-word target; saved as drafts only</td>
+                  </tr>
+                  <tr data-src="ID-Y7">
+                    <th scope="row">Image generation</th>
+                    <td data-label="What the code shows">gpt-image-1 with an AI-written caption; stored on Cloudinary</td>
+                  </tr>
+                  <tr data-src="ID-Y8">
+                    <th scope="row">Drafts and Content Bank</th>
+                    <td data-label="What the code shows">Edit, archive, pick a variation; keep manually written content</td>
+                  </tr>
+                  <tr data-src="ID-Y9">
+                    <th scope="row">Brand voice and Brand DNA</th>
+                    <td data-label="What the code shows">Tone, goals and style settings; style profile learned from 3+ edits</td>
+                  </tr>
+                  <tr data-src="ID-Y10">
+                    <th scope="row">Multi-provider AI</th>
+                    <td data-label="What the code shows">OpenAI, Gemini or Claude; users must provide their own AI API key unless an administrator grants access; monthly token limits; usage logging</td>
+                  </tr>
+                  <tr data-src="ID-Y11">
+                    <th scope="row">Plans and admin</th>
+                    <td data-label="What the code shows">Free, Pro, Business plans; admin panel; waitlist; teams; notifications; leaderboard</td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <th scope="rowgroup" colspan="2"><span class="outcome outcome--partial">Implemented — not verified live</span></th>
+                  </tr>
+                  <tr data-src="ID-Y12">
+                    <th scope="row">LinkedIn publishing</th>
+                    <td data-label="What the code shows">Text posts, now or scheduled; the committed code never requests LinkedIn’s posting permission, and there is no evidence of a published post</td>
+                  </tr>
+                  <tr data-src="ID-Y13">
+                    <th scope="row">Razorpay subscriptions</th>
+                    <td data-label="What the code shows">Signature-verified webhooks, payment logging; no live keys</td>
+                  </tr>
+                  <tr data-src="ID-Y14">
+                    <th scope="row">Daily digest and analytics</th>
+                    <td data-label="What the code shows">8am IST email via Resend; weekly post-analytics fetch</td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <th scope="rowgroup" colspan="2"><span class="outcome outcome--incomplete">Incomplete</span></th>
+                  </tr>
+                  <tr data-src="ID-Y15">
+                    <th scope="row">Stripe</th>
+                    <td data-label="What the code shows">Backend only; no UI</td>
+                  </tr>
+                  <tr data-src="ID-Y15">
+                    <th scope="row">Developer API keys</th>
+                    <td data-label="What the code shows">Can be created; no route accepts them</td>
+                  </tr>
+                  <tr data-src="ID-Y15">
+                    <th scope="row">Standalone captions</th>
+                    <td data-label="What the code shows">Content type exists but is unused</td>
+                  </tr>
+                  <tr data-src="ID-Y15">
+                    <th scope="row">Per-user LinkedIn app credentials</th>
+                    <td data-label="What the code shows">Stored but unused</td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <th scope="rowgroup" colspan="2"><span class="outcome">Not built</span></th>
+                  </tr>
+                  <tr data-src="ID-Y16">
+                    <th scope="row">Company-page posting</th>
+                    <td data-label="What the code shows">No implementation</td>
+                  </tr>
+                  <tr data-src="ID-Y16 ID-Y7">
+                    <th scope="row">Images on LinkedIn posts</th>
+                    <td data-label="What the code shows">Images can be generated but not attached to posts</td>
+                  </tr>
+                  <tr data-src="ID-Y16 ID-Y6">
+                    <th scope="row">Articles on LinkedIn</th>
+                    <td data-label="What the code shows">Articles stay as drafts</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+          <section class="cs-section" id="decisions" aria-labelledby="decisions-title">
+            <span class="cs-kicker">06 · What the code enforces</span>
+            <h2 id="decisions-title">Five behaviours the code enforces</h2>
+            <p data-src="ID-Y18">This section describes what the code does. Whether each behaviour was planned up front is not recorded.</p>
+            <ol>
+              <li data-src="ID-Y18 ID-Y1 ID-Y14"><strong>Approval first.</strong> Every post needs an explicit action: publish now or schedule. The daily digest emails a draft (not verified live) and never posts.</li>
+              <li data-src="ID-Y9"><strong>Voice from settings and from edits.</strong> Alongside explicit tone and style settings, SYNAPSE records what users change in AI drafts. After at least three edits, the AI summarises them into a style profile that later prompts use.</li>
+              <li data-src="ID-Y10"><strong>An AI key per user.</strong> Users must provide their own AI API key unless an administrator grants access. SYNAPSE works with OpenAI, Gemini or Claude, and each plan has a monthly token limit.</li>
+              <li data-src="ID-Y12"><strong>Scheduled posts in a job queue.</strong> Scheduled posts wait in a Redis-backed queue (Bull delayed jobs) with three retries; not verified live.</li>
+              <li data-src="ID-Y3 ID-Y10"><strong>Credentials encrypted at rest.</strong> LinkedIn tokens and user API keys are stored encrypted (AES-256-CBC).</li>
+            </ol>
+          </section>
+          <section class="cs-section" id="execution" aria-labelledby="execution-title">
+            <span class="cs-kicker">07 · Technical execution</span>
+            <h2 id="execution-title">A monorepo with a web app, an API and a job queue</h2>
+            <p data-src="ID-Y2 ID-Y17">The web app and the API live in one repository, organised as a monorepo (pnpm and Turborepo). There are Dockerfiles for both, and an automated pipeline (GitHub Actions) checks types, validates the database schema (Prisma) and runs a build; it has no test step.</p>
+            <h3>Implementation details</h3>
+            <ul>
+              <li data-src="ID-Y3"><strong>Sessions:</strong> after a user signs in with LinkedIn (OAuth), their session token (a JWT) is kept in an HttpOnly cookie, out of reach of page scripts.</li>
+              <li data-src="ID-Y3"><strong>Token storage:</strong> LinkedIn tokens are encrypted (AES-256-CBC) before they are saved.</li>
+              <li data-src="ID-Y12"><strong>Scheduling:</strong> scheduled posts wait in a Redis-backed job queue (Bull delayed jobs) with three retries; not verified live.</li>
+              <li data-src="ID-Y5"><strong>AI output:</strong> generated posts are checked against a fixed schema (zod), and each request must return exactly three variations.</li>
+              <li data-src="ID-Y4"><strong>Trend refresh:</strong> Hacker News and Google News are re-read every 6 hours and LinkedIn hashtag feeds every 8 hours, with Google News as the fallback for LinkedIn. Trends pass a heuristic relevance filter, then get AI scores for trend, saturation and opportunity.</li>
+              <li data-src="ID-Y9"><strong>Brand DNA:</strong> once a user has made at least three edits to AI drafts, the AI summarises them into a stored style profile that later prompts use.</li>
+            </ul>
+          </section>
+        </div>
+        <div class="chapter" id="chapter-iteration" data-chapter="iteration" data-index="4" role="group" aria-labelledby="chapter-iteration-label">
+          <p class="chapter__label" id="chapter-iteration-label"><span class="chapter__num">4</span> <span class="chapter__name">Iteration</span></p>
+          <div class="chapter__figure"><svg class="sy dia" data-state="4" viewBox="0 0 396 494" aria-hidden="true" focusable="false"><defs><marker id="sy-ah-sy-4" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="d-head" d="M0 0L8 4L0 8z"/></marker></defs><g style="opacity: var(--sy-access)"><rect class="d-node d-how" x="240" y="12" width="144" height="42" rx="9"/><text class="d-title" x="252" y="27">LinkedIn sign-in</text><text x="252" y="39">asks for profile</text><text x="252" y="49">and email only</text><rect class="d-node d-how" x="240" y="68" width="144" height="42" rx="9"/><text class="d-title" x="252" y="83">AI access</text><text x="252" y="95">needs own AI key</text><text x="252" y="105">or admin grant</text><path class="d-edge" d="M240 89H232V138H226" marker-end="url(#sy-ah-sy-4)"/></g><g style="opacity: var(--sy-niche)"><rect class="d-node d-why" x="12" y="12" width="212" height="42" rx="9"/><text class="d-title" x="24" y="29">Your niche</text><text x="24" y="43">10 supported niches</text><path class="d-edge" d="M36 54V66" marker-end="url(#sy-ah-sy-4)"/></g><g style="opacity: var(--sy-flow)"><rect class="d-node d-how" x="12" y="68" width="212" height="42" rx="9"/><text class="d-title" x="24" y="83">Trend discovery</text><text x="24" y="95">Hacker News · Google News</text><text x="24" y="105">LinkedIn hashtag RSS</text><path class="d-edge" d="M36 110V122" marker-end="url(#sy-ah-sy-4)"/><rect class="d-node d-how" x="12" y="124" width="212" height="42" rx="9"/><text class="d-title" x="24" y="139">AI generation</text><text x="24" y="151">3 variations per topic</text><text x="24" y="161">OpenAI · Gemini · Claude</text><path class="d-edge" d="M36 166V178" marker-end="url(#sy-ah-sy-4)"/><rect class="d-node d-how" x="12" y="180" width="212" height="42" rx="9"/><text class="d-title" x="24" y="197">Drafts</text><text x="24" y="211">edit · pick · archive</text></g><g style="opacity: var(--sy-voice)"><rect class="d-node d-how" x="240" y="124" width="144" height="42" rx="9"/><text class="d-title" x="252" y="139">Brand DNA</text><text x="252" y="151">style profile</text><text x="252" y="161">after 3+ edits</text><rect class="d-node d-why" x="240" y="180" width="144" height="42" rx="9"/><text class="d-title" x="252" y="197">Your edits</text><text x="252" y="211">changes to drafts</text><path class="d-edge" d="M224 201H238" marker-end="url(#sy-ah-sy-4)"/><path class="d-edge" d="M312 180V168" marker-end="url(#sy-ah-sy-4)"/><path class="d-edge" d="M240 152H226" marker-end="url(#sy-ah-sy-4)"/></g><g style="opacity: var(--sy-approve)"><path class="d-edge" d="M36 222V234" marker-end="url(#sy-ah-sy-4)"/><rect class="d-node d-why" x="12" y="236" width="212" height="42" rx="9"/><text class="d-title" x="24" y="253">Your approval</text><text x="24" y="267">publish now or schedule</text></g><g style="opacity: var(--sy-post)"><path class="d-edge d-dash" d="M36 278V290" marker-end="url(#sy-ah-sy-4)"/><rect class="d-node d-how d-dash" x="12" y="292" width="212" height="42" rx="9"/><text class="d-title" x="24" y="307">Scheduling</text><text x="24" y="319">Bull delayed jobs</text><text x="24" y="329">not verified live</text><path class="d-edge d-dash" d="M36 334V346" marker-end="url(#sy-ah-sy-4)"/><rect class="d-node d-how d-dash" x="12" y="348" width="212" height="42" rx="9"/><text class="d-title" x="24" y="363">LinkedIn</text><text x="24" y="375">text posts</text><text x="24" y="385">not verified live</text></g><g style="opacity: var(--sy-biz)"><rect class="d-node d-how" x="240" y="236" width="144" height="42" rx="9"/><text class="d-title" x="252" y="251">Business layer</text><text x="252" y="263">plans · admin</text><text x="252" y="273">waitlist · teams</text><rect class="d-node d-how d-dash" x="240" y="292" width="144" height="42" rx="9"/><text class="d-title" x="252" y="307">Payments</text><text x="252" y="319">Razorpay</text><text x="252" y="329">not verified live</text><rect class="d-node d-how d-dashdot" x="240" y="348" width="144" height="42" rx="9"/><text class="d-title" x="252" y="363">Incomplete</text><text x="252" y="375">Stripe backend</text><text x="252" y="385">dev API keys</text><rect class="d-node d-ink d-ghost" x="240" y="404" width="144" height="58" rx="9"/><text class="d-title" x="252" y="421">Not built</text><text x="252" y="434">company pages</text><text x="252" y="445">images in posts</text><text x="252" y="456">LinkedIn Articles</text></g><g style="opacity: var(--sy-tag)"><path class="d-edge d-ghost" d="M60 390V402"/><rect class="d-node d-why d-ghost" x="12" y="402" width="212" height="32" rx="7"/><text class="d-warn" x="24" y="415">POSTING PERMISSION NOT</text><text class="d-warn" x="24" y="427">IN COMMITTED CODE</text></g><g style="opacity: var(--sy-out)"><path class="d-edge d-ghost" d="M12 448H224"/><text class="d-read" x="12" y="462">NOT DEPLOYED · NO USERS</text><text class="d-read" x="12" y="476">NO PUBLISHED POST</text></g></svg></div>
+          <section class="cs-section" id="iteration" aria-labelledby="iteration-title">
+            <span class="cs-kicker">08 · How it changed</span>
+            <h2 id="iteration-title">How the implementation changed, and what is still open</h2>
+            <ol>
+              <li data-src="ID-Y23 ID-Y1"><time datetime="2026-05-29">29 May 2026</time>: first commit. The README at the time said “You always approve and post manually — no auto-posting”, and the project’s CLAUDE.md said never to implement scheduled or automatic posting.</li>
+              <li data-src="ID-Y23"><time datetime="2026-06-04">4 June 2026</time>: commits titled “admin page and few other changes” and “adding web files”.</li>
+              <li data-src="ID-Y23 ID-Y12"><time datetime="2026-06-07">7 June 2026</time>: a commit titled “major fixes” adds publish-now and user-scheduled publishing.</li>
+              <li data-src="ID-Y23 ID-Y10"><time datetime="2026-06-20">20 June 2026</time>: last commits. From here, users must provide their own AI API key unless an administrator grants access.</li>
+            </ol>
+            <p data-src="ID-Y18 ID-Y12">The documented implementation changed from manual posting to publish-now/schedule. Reason not recorded. Every post still needs an explicit publish or schedule action.</p>
+            <div class="callout callout--honest">
+              <span class="callout__title" id="publishing-gap-title">The publishing gap: committed code and uncommitted work</span>
+              <p data-src="ID-Y12 ID-Y23">The code to publish and schedule LinkedIn posts is committed. But LinkedIn requires a separate permission to post on a member’s behalf, and the committed code asks only for sign-in permissions (basic profile and email). Later work to add that permission is uncommitted and incomplete: it is not part of the implementation described on this page, and there is no evidence that any post has been published.</p>
+            </div>
+            <h3>Known issues</h3>
+            <ul>
+              <li data-src="ID-Y17">No automated tests.</li>
+              <li data-src="ID-Y17">Documentation has drifted from the code. The project’s CLAUDE.md still says never to implement scheduled or automatic posting, although the code implements user-scheduled publishing; the README says Next.js 14, but the code uses 16.</li>
+            </ul>
+          </section>
+        </div>
+        <div class="chapter" id="chapter-impact" data-chapter="impact" data-index="5" role="group" aria-labelledby="chapter-impact-label">
+          <p class="chapter__label" id="chapter-impact-label"><span class="chapter__num">5</span> <span class="chapter__name">Impact</span></p>
+          <div class="chapter__figure"><svg class="sy dia" data-state="5" viewBox="0 0 396 494" aria-hidden="true" focusable="false"><defs><marker id="sy-ah-sy-5" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="d-head" d="M0 0L8 4L0 8z"/></marker></defs><g style="opacity: var(--sy-access)"><rect class="d-node d-how" x="240" y="12" width="144" height="42" rx="9"/><text class="d-title" x="252" y="27">LinkedIn sign-in</text><text x="252" y="39">asks for profile</text><text x="252" y="49">and email only</text><rect class="d-node d-how" x="240" y="68" width="144" height="42" rx="9"/><text class="d-title" x="252" y="83">AI access</text><text x="252" y="95">needs own AI key</text><text x="252" y="105">or admin grant</text><path class="d-edge" d="M240 89H232V138H226" marker-end="url(#sy-ah-sy-5)"/></g><g style="opacity: var(--sy-niche)"><rect class="d-node d-why" x="12" y="12" width="212" height="42" rx="9"/><text class="d-title" x="24" y="29">Your niche</text><text x="24" y="43">10 supported niches</text><path class="d-edge" d="M36 54V66" marker-end="url(#sy-ah-sy-5)"/></g><g style="opacity: var(--sy-flow)"><rect class="d-node d-how" x="12" y="68" width="212" height="42" rx="9"/><text class="d-title" x="24" y="83">Trend discovery</text><text x="24" y="95">Hacker News · Google News</text><text x="24" y="105">LinkedIn hashtag RSS</text><path class="d-edge" d="M36 110V122" marker-end="url(#sy-ah-sy-5)"/><rect class="d-node d-how" x="12" y="124" width="212" height="42" rx="9"/><text class="d-title" x="24" y="139">AI generation</text><text x="24" y="151">3 variations per topic</text><text x="24" y="161">OpenAI · Gemini · Claude</text><path class="d-edge" d="M36 166V178" marker-end="url(#sy-ah-sy-5)"/><rect class="d-node d-how" x="12" y="180" width="212" height="42" rx="9"/><text class="d-title" x="24" y="197">Drafts</text><text x="24" y="211">edit · pick · archive</text></g><g style="opacity: var(--sy-voice)"><rect class="d-node d-how" x="240" y="124" width="144" height="42" rx="9"/><text class="d-title" x="252" y="139">Brand DNA</text><text x="252" y="151">style profile</text><text x="252" y="161">after 3+ edits</text><rect class="d-node d-why" x="240" y="180" width="144" height="42" rx="9"/><text class="d-title" x="252" y="197">Your edits</text><text x="252" y="211">changes to drafts</text><path class="d-edge" d="M224 201H238" marker-end="url(#sy-ah-sy-5)"/><path class="d-edge" d="M312 180V168" marker-end="url(#sy-ah-sy-5)"/><path class="d-edge" d="M240 152H226" marker-end="url(#sy-ah-sy-5)"/></g><g style="opacity: var(--sy-approve)"><path class="d-edge" d="M36 222V234" marker-end="url(#sy-ah-sy-5)"/><rect class="d-node d-why" x="12" y="236" width="212" height="42" rx="9"/><text class="d-title" x="24" y="253">Your approval</text><text x="24" y="267">publish now or schedule</text></g><g style="opacity: var(--sy-post)"><path class="d-edge d-dash" d="M36 278V290" marker-end="url(#sy-ah-sy-5)"/><rect class="d-node d-how d-dash" x="12" y="292" width="212" height="42" rx="9"/><text class="d-title" x="24" y="307">Scheduling</text><text x="24" y="319">Bull delayed jobs</text><text x="24" y="329">not verified live</text><path class="d-edge d-dash" d="M36 334V346" marker-end="url(#sy-ah-sy-5)"/><rect class="d-node d-how d-dash" x="12" y="348" width="212" height="42" rx="9"/><text class="d-title" x="24" y="363">LinkedIn</text><text x="24" y="375">text posts</text><text x="24" y="385">not verified live</text></g><g style="opacity: var(--sy-biz)"><rect class="d-node d-how" x="240" y="236" width="144" height="42" rx="9"/><text class="d-title" x="252" y="251">Business layer</text><text x="252" y="263">plans · admin</text><text x="252" y="273">waitlist · teams</text><rect class="d-node d-how d-dash" x="240" y="292" width="144" height="42" rx="9"/><text class="d-title" x="252" y="307">Payments</text><text x="252" y="319">Razorpay</text><text x="252" y="329">not verified live</text><rect class="d-node d-how d-dashdot" x="240" y="348" width="144" height="42" rx="9"/><text class="d-title" x="252" y="363">Incomplete</text><text x="252" y="375">Stripe backend</text><text x="252" y="385">dev API keys</text><rect class="d-node d-ink d-ghost" x="240" y="404" width="144" height="58" rx="9"/><text class="d-title" x="252" y="421">Not built</text><text x="252" y="434">company pages</text><text x="252" y="445">images in posts</text><text x="252" y="456">LinkedIn Articles</text></g><g style="opacity: var(--sy-tag)"><path class="d-edge d-ghost" d="M60 390V402"/><rect class="d-node d-why d-ghost" x="12" y="402" width="212" height="32" rx="7"/><text class="d-warn" x="24" y="415">POSTING PERMISSION NOT</text><text class="d-warn" x="24" y="427">IN COMMITTED CODE</text></g><g style="opacity: var(--sy-out)"><path class="d-edge d-ghost" d="M12 448H224"/><text class="d-read" x="12" y="462">NOT DEPLOYED · NO USERS</text><text class="d-read" x="12" y="476">NO PUBLISHED POST</text></g></svg></div>
+          <section class="cs-section" id="outcome" aria-labelledby="outcome-title">
+            <span class="cs-kicker">09 · Outcome</span>
+            <h2 id="outcome-title">No external impact: a portfolio prototype</h2>
+            <p data-src="ID-Y-status ID-Y12 ID-Y17">SYNAPSE has no users, there is no evidence it has published a post, and it is not deployed.</p>
+            <p data-src="ID-Y3 ID-Y11 ID-Y20">What exists is the codebase: the features marked Implemented above, plus a landing page and waitlist that have not been launched.</p>
+            <p data-src="ID-Y-status">SYNAPSE is kept as a portfolio prototype.</p>
+          </section>
+          <section class="cs-section" id="evidence" aria-labelledby="evidence-title">
+            <span class="cs-kicker">10 · What the evidence showed</span>
+            <h2 id="evidence-title">The content loop is built; reaching LinkedIn is not proven</h2>
+            <h3>What exists</h3>
+            <ul>
+              <li data-src="ID-Y4 ID-Y5 ID-Y8 ID-Y9">The core loop (trends, three variations, drafts, and edits feeding a style profile) is implemented in code.</li>
+              <li data-src="ID-Y6 ID-Y7 ID-Y11">The build also includes long-form articles, image generation, plans, an admin panel, team invites and a leaderboard.</li>
+            </ul>
+            <h3>Not proven</h3>
+            <ul>
+              <li data-src="ID-Y12">The step that would reach LinkedIn is implemented but not verified: the committed code never requests LinkedIn’s posting permission, and there is no evidence any post has been published.</li>
+              <li data-src="ID-Y13 ID-Y14 ID-Y15">The payment and email features are either not verified live (Razorpay, the daily digest) or incomplete (Stripe).</li>
+              <li data-src="ID-Y-status">None of the features has had a real user.</li>
+              <li data-src="ID-Y17">There are no automated tests, and the documentation no longer matches the code.</li>
+            </ul>
+          </section>
+          <section class="cs-section" id="learned" aria-labelledby="learned-title">
+            <span class="cs-kicker">11 · What I learned</span>
+            <h2 id="learned-title">Check the riskiest dependency first</h2>
+            <ol>
+              <li data-src="ID-Y12 ID-Y23"><strong>Check the riskiest dependency early.</strong> The trend-to-draft loop is implemented, but publishing to LinkedIn depends on a separate LinkedIn posting permission that the committed code never requested. Until that step is verified, no part of the product that reaches LinkedIn has been shown to work.</li>
+              <li data-src="ID-Y11 ID-Y13 ID-Y-status"><strong>Validate the core loop before the layers around it.</strong> Plans, payments, an admin area and team features were built around a core flow of topic → draft → post, even though there were no users or user research to validate that flow.</li>
+              <li data-src="ID-Y17"><strong>Keep the documentation in step with the code.</strong> The project’s CLAUDE.md still says scheduled posting should never be implemented, while the code implements user-scheduled publishing, and there are no automated tests.</li>
+            </ol>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <section class="cs-next stage" aria-labelledby="next-title">
+      <div class="container">
+        <h2 id="next-title" class="eyebrow">Next case study</h2>
+        <article class="card card--link">
+          <div class="card__meta">
+            <span class="badge badge--research">Research prototype</span>
+          </div>
+          <h3 class="card__title"><a href="/case-studies/signbridge.html" data-goatcounter-click="project_view-signbridge">SignBridge: spoken video to Indian Sign Language</a></h3>
+          <p class="card__body" data-src="ID-B1 ID-B2 ID-B13 ID-B14 ID-B17">An accessibility research prototype, including approaches that did not work: a hand-tracking failure and a collision fix switched off by default.</p>
+          <div class="card__footer"><span class="card__cta" aria-hidden="true">Read case study <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </article>
+        <p class="mb-0"><a class="text-link" href="/case-studies/">All case studies <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+      </div>
+    </section>
+  </main>
+<!-- @main:end -->
+<!-- @footer:start -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <p class="site-footer__brand">Jose Chacko</p>
+          <p>Developer by background. Product thinker by instinct. Assistant Manager – Web Developer at PPFAS, Mumbai.</p>
+        </div>
+        <nav aria-labelledby="footer-explore">
+          <h2 id="footer-explore">Explore</h2>
+          <ul class="footer-links">
+            <li><a href="/case-studies/">Case studies</a></li>
+            <li><a href="/experience.html">Experience</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/resume.html">Resume</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 id="footer-contact">Contact</h2>
+          <ul class="footer-links" aria-labelledby="footer-contact">
+            <li><a href="mailto:josejoy2216@gmail.com" data-goatcounter-click="email_click"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>josejoy2216@gmail.com</span></a></li>
+            <li><a href="https://www.linkedin.com/in/josejoychacko/" data-goatcounter-click="linkedin_click"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg><span>LinkedIn</span></a></li>
+            <li><a href="https://github.com/josejoy2216"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57v-2c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12 12 0 0 0 12 .3"/></svg><span>GitHub</span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p>© 2026 Jose Chacko</p>
+        <p><a href="/privacy.html">Privacy</a></p>
+      </div>
+    </div>
+  </footer>
+<!-- @footer:end -->
+</body>
+</html>

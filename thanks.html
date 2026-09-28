@@ -4,8 +4,8 @@
 <!-- @head:start -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Resume builder — Jose Chacko</title>
-  <meta name="description" content="A utility that generates an editable, ATS-friendly draft of Jose Chacko’s resume.">
+  <title>Message sent — Jose Chacko</title>
+  <meta name="description" content="Your message to Jose Chacko was sent.">
   <meta name="robots" content="noindex">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#e9edf1" media="(prefers-color-scheme: light)">
@@ -16,9 +16,7 @@
   <script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light'){d.setAttribute('data-theme',t);}}catch(e){}})();</script>
   <link rel="preload" href="/assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/css/styles.css?v=20260927">
-  <link rel="stylesheet" href="/assets/css/resume-builder.css?v=20260927">
   <script src="/assets/js/site.js?v=20260927" defer></script>
-  <script src="/assets/js/resume-builder.js?v=20260927" defer></script>
 <!-- @head:end -->
 </head>
 <body>
@@ -39,7 +37,7 @@
           <li><a class="site-nav__link" href="/experience.html">Experience</a></li>
           <li><a class="site-nav__link" href="/case-studies/">Case Studies</a></li>
           <li><a class="site-nav__link" href="/projects.html">Projects</a></li>
-          <li><a class="site-nav__link" href="/resume.html" aria-current="true">Resume</a></li>
+          <li><a class="site-nav__link" href="/resume.html">Resume</a></li>
           <li><a class="site-nav__link" href="/contact.html">Contact</a></li>
           <li class="nav-theme">
             <button class="icon-btn theme-toggle" type="button" aria-pressed="false" hidden>
@@ -57,20 +55,16 @@
   <main id="main" tabindex="-1">
     <section class="page-head" aria-labelledby="page-title">
       <div class="container">
-        <h1 id="page-title">Resume builder</h1>
-        <p class="lead">A tool for making tailored, ATS-friendly versions of my resume. It starts from the content of the resume page: edit the draft, then save it as a PDF. Your edits stay in your browser and are never sent anywhere.</p>
-        <p class="mb-0"><a class="text-link rb-back" href="/resume.html"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Back to the resume</a></p>
+        <h1 id="page-title">Thanks — your message was sent</h1>
       </div>
     </section>
 
     <div class="container">
-      <noscript>
-        <div class="callout">
-          <strong class="callout__title">The resume builder needs JavaScript</strong>
-          <p>It creates the editable draft in your browser. The resume itself is on the <a href="/resume.html">resume page</a>.</p>
-        </div>
-      </noscript>
-      <div id="resume-builder-root" class="rb-root"></div>
+      <div class="cluster">
+        <a class="btn btn--primary" href="/case-studies/">Read the case studies <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--secondary" href="/">Back to the home page</a>
+        <a class="btn btn--secondary" href="/contact.html">Send another message</a>
+      </div>
     </div>
   </main>
 <!-- @main:end -->

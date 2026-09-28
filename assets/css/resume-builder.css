@@ -1,0 +1,324 @@
+/* Resume builder utility (/resume-builder.html).
+   Builder-only layout and the editable document preview. Shared components
+   (buttons, card, status text, card__points) come from styles.css. The
+   stand-alone print window has its own inline CSS in resume-builder.js. */
+
+/* ---------- Page ---------- */
+.rb-back:hover svg {
+  transform: translateX(-2px);
+}
+
+.rb-root:empty {
+  display: none;
+}
+
+/* ---------- Layout: controls stack above the preview, side by side on wide screens ---------- */
+.rb {
+  --rb-paper: var(--figure-bg);
+  --rb-ink: #16181d;
+  --rb-ink-muted: #3f4552;
+  --rb-rule: #9aa0aa;
+  --rb-caret: #1f4ed8;
+
+  display: grid;
+  gap: var(--s-6);
+  align-items: start;
+}
+
+@media (min-width: 64rem) {
+  .rb {
+    grid-template-columns: 19rem minmax(0, 1fr);
+    gap: var(--s-8);
+  }
+}
+
+@media (min-width: 64rem) and (min-height: 46rem) {
+  .rb__panel {
+    position: sticky;
+    top: calc(var(--header-h) + var(--s-6));
+  }
+}
+
+/* ---------- Controls panel (a .card) ---------- */
+.rb__panel.card {
+  height: auto;
+  min-width: 0;
+}
+
+.rb__title {
+  margin-bottom: var(--s-2);
+  font-size: var(--fs-lg);
+}
+
+.rb__intro {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+.rb__actions {
+  display: grid;
+  gap: var(--s-3);
+  margin-bottom: var(--s-3);
+}
+
+@media (min-width: 36rem) and (max-width: 63.99rem) {
+  .rb__actions {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.rb__actions .btn {
+  width: 100%;
+  padding-inline: var(--s-4);
+}
+
+.rb__status {
+  margin-bottom: var(--s-2);
+}
+
+.rb__subtitle {
+  margin: var(--s-6) 0 var(--s-3);
+  font-size: var(--fs-base);
+}
+
+.rb__tips {
+  margin-bottom: var(--s-5);
+  color: var(--text-muted);
+}
+
+.rb__note {
+  margin: 0;
+  padding-top: var(--s-4);
+  border-top: 1px solid var(--border);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+/* ---------- Preview stage ---------- */
+.rb__stage {
+  min-width: 0;
+}
+
+.rb__hint {
+  margin: 0 0 var(--s-3);
+  font-size: var(--fs-xs);
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+@media (min-width: 40rem) {
+  .rb__desk {
+    padding: clamp(1rem, 0.5rem + 2vw, 2.5rem);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--surface-2);
+  }
+}
+
+/* ---------- The editable document ("paper": white in both themes, like the PDF) ---------- */
+.rb-doc {
+  max-width: 210mm;
+  min-height: 20rem;
+  margin-inline: auto;
+  padding: clamp(1rem, 0.4rem + 3vw, 3.25rem) clamp(1rem, 0.3rem + 3.4vw, 3.5rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--rb-paper);
+  box-shadow: var(--shadow);
+  color: var(--rb-ink);
+  caret-color: var(--rb-caret);
+  font-family: Arial, "Helvetica Neue", Helvetica, var(--font-sans);
+  font-size: clamp(0.8125rem, 0.76rem + 0.25vw, 0.9375rem);
+  line-height: 1.45;
+  font-variant-ligatures: none;
+  overflow-wrap: anywhere;
+  cursor: text;
+}
+
+.rb-doc:hover {
+  border-color: var(--border-strong);
+}
+
+.rb-doc:focus {
+  outline: none;
+}
+
+.rb-doc:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+.rb-doc ::selection,
+.rb-doc::selection {
+  background: #cfdcfb;
+  color: var(--rb-ink);
+}
+
+.rb-doc a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+.rb-doc h2,
+.rb-doc h3 {
+  color: inherit;
+  letter-spacing: 0;
+  text-wrap: wrap;
+}
+
+.rb-doc p,
+.rb-doc ul,
+.rb-doc ol {
+  margin: 0 0 0.4em;
+}
+
+.rb-doc ul,
+.rb-doc ol {
+  padding-left: 1.15em;
+}
+
+.rb-doc li + li {
+  margin-top: 0.2em;
+}
+
+.rb-doc__header {
+  margin-bottom: 0.9em;
+  padding-bottom: 0.6em;
+  border-bottom: 1px solid var(--rb-ink);
+  text-align: center;
+}
+
+.rb-doc__name {
+  margin: 0 0 0.2em;
+  font-size: 1.9em;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.rb-doc__headline {
+  font-weight: 700;
+}
+
+.rb-doc .rb-doc__contact {
+  margin: 0;
+  font-size: 0.93em;
+  color: var(--rb-ink-muted);
+}
+
+.rb-doc__section {
+  margin-top: 1.1em;
+}
+
+.rb-doc__section > h2 {
+  margin: 0 0 0.5em;
+  padding-bottom: 0.2em;
+  border-bottom: 1px solid var(--rb-rule);
+  font-size: 0.95em;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.rb-doc__item {
+  margin-bottom: 0.8em;
+}
+
+.rb-doc__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0 1em;
+}
+
+.rb-doc__row h3 {
+  margin: 0;
+  font-size: 1.05em;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.rb-doc__row span {
+  color: var(--rb-ink-muted);
+  white-space: nowrap;
+}
+
+.rb-doc .rb-doc__sub {
+  margin-bottom: 0.3em;
+  font-style: italic;
+  color: var(--rb-ink-muted);
+}
+
+.rb-doc .rb-doc__labelled {
+  padding-left: 0;
+  list-style: none;
+}
+
+.rb-doc .rb-doc__meta {
+  color: var(--rb-ink-muted);
+}
+
+/* ---------- Forced colours ---------- */
+@media (forced-colors: active) {
+  .rb-doc {
+    border: 1px solid CanvasText;
+  }
+}
+
+/* ---------- Printing this page directly (the Download PDF window is preferred) ---------- */
+@page {
+  size: A4;
+  margin: 14mm 14mm 16mm;
+}
+
+@media print {
+  .page-head,
+  .rb__panel,
+  .rb__hint {
+    display: none !important;
+  }
+
+  .rb {
+    display: block;
+  }
+
+  .rb__desk {
+    padding: 0;
+    border: 0;
+    background: none;
+  }
+
+  .rb-doc {
+    max-width: none;
+    min-height: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    color: #000;
+    font-size: 10pt;
+    line-height: 1.38;
+  }
+
+  .rb-doc a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  .rb-doc h2,
+  .rb-doc h3,
+  .rb-doc__row {
+    break-after: avoid;
+  }
+
+  .rb-doc__item,
+  .rb-doc li {
+    break-inside: avoid;
+  }
+}

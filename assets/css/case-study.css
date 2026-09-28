@@ -1,0 +1,508 @@
+/* ==========================================================================
+   Case-study template: stage hero, chapters, sticky diagram, next case.
+   Loaded on case-study pages only. Builds on styles.css tokens.
+   ========================================================================== */
+
+/* Diagram state variables (animatable where @property is supported) */
+@property --pp-biz { syntax: "<number>"; inherits: true; initial-value: 1; }
+@property --pp-tech { syntax: "<number>"; inherits: true; initial-value: 0.5; }
+@property --pp-loop { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --pp-reduced { syntax: "<number>"; inherits: true; initial-value: 1; }
+@property --pp-plan { syntax: "<number>"; inherits: true; initial-value: 1; }
+@property --pp-self { syntax: "<number>"; inherits: true; initial-value: 1; }
+@property --pp-built { syntax: "<number>"; inherits: true; initial-value: 1; }
+@property --pp-rows { syntax: "<number>"; inherits: true; initial-value: 1; }
+@property --pp-rowdim { syntax: "<number>"; inherits: true; initial-value: 1; }
+@property --pp-save { syntax: "<number>"; inherits: true; initial-value: 1; }
+
+.pp-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.pp {
+  --pp-biz: 1; --pp-tech: 0.5; --pp-loop: 0; --pp-reduced: 1; --pp-plan: 1;
+  --pp-self: 1; --pp-built: 1; --pp-rows: 1; --pp-rowdim: 1; --pp-save: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  transition:
+    --pp-biz 0.7s var(--ease-settle), --pp-tech 0.7s var(--ease-settle), --pp-loop 0.7s var(--ease-settle),
+    --pp-reduced 0.7s var(--ease-settle), --pp-plan 0.7s var(--ease-settle), --pp-self 0.7s var(--ease-settle),
+    --pp-built 0.7s var(--ease-settle), --pp-rows 0.7s var(--ease-settle), --pp-rowdim 0.7s var(--ease-settle),
+    --pp-save 0.7s var(--ease-settle);
+}
+
+/* 1 Problem: business teams depend on a separate tech team */
+.pp[data-state="1"] { --pp-biz: 1; --pp-tech: 1; --pp-loop: 1; --pp-reduced: 0; --pp-plan: 0.12; --pp-self: 0; --pp-built: 0.18; --pp-rows: 0.5; --pp-rowdim: 1; --pp-save: 0; }
+/* 2 Thinking: planned in Figma and Photoshop before implementation */
+.pp[data-state="2"] { --pp-biz: 1; --pp-tech: 0.4; --pp-loop: 0.3; --pp-reduced: 0; --pp-plan: 1; --pp-self: 0; --pp-built: 0.3; --pp-rows: 0.5; --pp-rowdim: 1; --pp-save: 0; }
+/* 3 Execution and 4 Iteration: what the record says was built */
+.pp[data-state="3"],
+.pp[data-state="4"] { --pp-biz: 0.85; --pp-tech: 0.35; --pp-loop: 0.15; --pp-reduced: 0; --pp-plan: 0.35; --pp-self: 1; --pp-built: 1; --pp-rows: 1; --pp-rowdim: 1; --pp-save: 0; }
+/* 5 Impact: each saving linked to the builds it came from */
+.pp[data-state="5"] { --pp-biz: 1; --pp-tech: 0.35; --pp-loop: 0; --pp-reduced: 1; --pp-plan: 0.25; --pp-self: 1; --pp-built: 0.9; --pp-rows: 1; --pp-rowdim: 0.4; --pp-save: 1; }
+
+.pp-row { opacity: var(--pp-rowdim); }
+.pp-row--fixed,
+.pp-row--recurring { opacity: 1; }
+.dia .d-title--sm { font-size: 10.75px; letter-spacing: -0.005em; }
+.dia .d-save { stroke: var(--why); }
+
+/* SYNAPSE system diagram: same approach, its own state variables */
+@property --sy-niche { syntax: "<number>"; inherits: true; initial-value: 1; }
+@property --sy-flow { syntax: "<number>"; inherits: true; initial-value: 1; }
+@property --sy-approve { syntax: "<number>"; inherits: true; initial-value: 1; }
+@property --sy-post { syntax: "<number>"; inherits: true; initial-value: 1; }
+@property --sy-voice { syntax: "<number>"; inherits: true; initial-value: 1; }
+@property --sy-access { syntax: "<number>"; inherits: true; initial-value: 1; }
+@property --sy-biz { syntax: "<number>"; inherits: true; initial-value: 1; }
+@property --sy-tag { syntax: "<number>"; inherits: true; initial-value: 1; }
+@property --sy-out { syntax: "<number>"; inherits: true; initial-value: 1; }
+
+.sy {
+  --sy-niche: 1; --sy-flow: 1; --sy-approve: 1; --sy-post: 1; --sy-voice: 1;
+  --sy-access: 1; --sy-biz: 1; --sy-tag: 1; --sy-out: 1;
+  transition:
+    --sy-niche 0.7s var(--ease-settle), --sy-flow 0.7s var(--ease-settle), --sy-approve 0.7s var(--ease-settle),
+    --sy-post 0.7s var(--ease-settle), --sy-voice 0.7s var(--ease-settle), --sy-access 0.7s var(--ease-settle),
+    --sy-biz 0.7s var(--ease-settle), --sy-tag 0.7s var(--ease-settle), --sy-out 0.7s var(--ease-settle);
+}
+
+/* 1 Problem: the niche and the user's voice; no users */
+.sy[data-state="1"] { --sy-niche: 1; --sy-flow: 0.55; --sy-approve: 0.3; --sy-post: 0.25; --sy-voice: 0.55; --sy-access: 0.2; --sy-biz: 0.15; --sy-tag: 0; --sy-out: 0.7; }
+/* 2 Thinking: the workflow, ending in the user's approval */
+.sy[data-state="2"] { --sy-niche: 1; --sy-flow: 1; --sy-approve: 1; --sy-post: 1; --sy-voice: 0.45; --sy-access: 0.2; --sy-biz: 0.12; --sy-tag: 0; --sy-out: 0; }
+/* 3 Execution: the whole system as the committed code shows it */
+.sy[data-state="3"] { --sy-niche: 1; --sy-flow: 1; --sy-approve: 1; --sy-post: 1; --sy-voice: 1; --sy-access: 1; --sy-biz: 1; --sy-tag: 0.5; --sy-out: 0; }
+/* 4 Iteration: publishing, scheduling, the own-key rule and the missing permission */
+.sy[data-state="4"] { --sy-niche: 0.3; --sy-flow: 0.35; --sy-approve: 1; --sy-post: 1; --sy-voice: 0.3; --sy-access: 1; --sy-biz: 0.35; --sy-tag: 1; --sy-out: 0.35; }
+/* 5 Impact: what exists, and what is not proven */
+.sy[data-state="5"] { --sy-niche: 0.6; --sy-flow: 0.6; --sy-approve: 0.6; --sy-post: 0.6; --sy-voice: 0.6; --sy-access: 0.6; --sy-biz: 0.6; --sy-tag: 1; --sy-out: 1; }
+
+.cs-visual .status-key {
+  justify-content: center;
+  margin-top: var(--s-4);
+}
+
+/* ---------- Hero (stage) ---------- */
+.cs-hero.stage {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding-block: clamp(2.25rem, 1.5rem + 4vw, 5rem) clamp(2.5rem, 1.5rem + 3vw, 4rem);
+  background:
+    radial-gradient(55% 70% at 78% 40%, #132030 0%, rgba(19, 32, 48, 0) 70%),
+    linear-gradient(180deg, #0b0f15 0%, #080b10 100%);
+}
+
+.cs-hero .container {
+  max-width: var(--container-wide);
+}
+
+.cs-hero__inner {
+  display: grid;
+  gap: var(--s-10);
+}
+
+.cs-hero h1 {
+  max-width: 16ch;
+  font-size: clamp(2.2rem, 1.1rem + 4.2vw, 4.6rem);
+  font-weight: 720;
+  font-stretch: 118%;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.cs-hero .lead {
+  color: var(--text-muted);
+}
+
+.cs-hero .cs-facts {
+  margin-top: var(--s-8);
+}
+
+.cs-visual {
+  width: 100%;
+  max-width: 22rem;
+  margin-inline: auto;
+}
+
+.cs-visual--ppfas {
+  view-transition-name: case-ppfas;
+}
+
+@media (min-width: 64rem) {
+  .cs-hero__inner {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    align-items: center;
+    column-gap: clamp(2.5rem, 5vw, 5rem);
+  }
+
+  .cs-visual {
+    max-width: 28rem;
+  }
+}
+
+/* At-a-glance rail sits just under the stage */
+.cs-glance {
+  padding-top: clamp(2rem, 1.5rem + 2vw, 3rem);
+}
+
+/* ---------- Chapter bar (phones and tablets) ---------- */
+.chapter-bar {
+  position: sticky;
+  top: var(--chapter-bar-top, var(--header-h));
+  z-index: 40;
+  margin-top: var(--s-8);
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  border-block: 1px solid var(--border);
+}
+
+@supports (backdrop-filter: blur(1px)) {
+  .chapter-bar {
+    backdrop-filter: saturate(140%) blur(12px);
+    -webkit-backdrop-filter: saturate(140%) blur(12px);
+  }
+}
+
+.chapter-bar__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  min-height: 2.75rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.chapter-bar__num {
+  color: var(--why);
+}
+
+.chapter-bar__name {
+  color: var(--text);
+}
+
+.chapter-bar__progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: var(--why);
+  transform: scaleX(var(--p, 0));
+  transform-origin: left;
+}
+
+@media (min-width: 64rem) {
+  .chapter-bar { display: none !important; }
+}
+
+/* ---------- Layout: chapters + sticky side column ---------- */
+.cs-layout {
+  display: grid;
+  gap: var(--s-10);
+}
+
+.cs-main {
+  min-width: 0;
+  max-width: 46rem;
+}
+
+.cs-aside__visual {
+  display: none;
+}
+
+@media (min-width: 64rem) {
+  .cs-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(17rem, 21rem);
+    column-gap: clamp(2.5rem, 5vw, 5rem);
+    align-items: start;
+  }
+
+  .cs-aside {
+    order: 2;
+    position: sticky;
+    top: calc(var(--header-h) + var(--s-6));
+    display: grid;
+    gap: var(--s-6);
+    max-height: calc(100vh - var(--header-h) - var(--s-10));
+  }
+
+  .cs-main {
+    order: 1;
+  }
+
+  .cs-aside__visual {
+    display: block;
+    padding: var(--s-4);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background:
+      radial-gradient(80% 70% at 50% 35%, #16222f 0%, var(--stage-bg) 80%);
+    color-scheme: dark;
+    --surface: #131a23;
+    --text: #e9eef4;
+    --text-muted: #9aa6b4;
+    --text-faint: #8a96a5;
+    --border-strong: rgba(233, 238, 244, 0.3);
+    --why: #f2a33a;
+    --how: #79b4e6;
+  }
+
+  /* On short screens the diagram shrinks so every 44px contents link stays on screen */
+  .cs-aside__visual .dia {
+    width: auto;
+    max-width: 100%;
+    max-height: min(44vh, calc(100vh - var(--header-h) - var(--aside-reserve, 26rem)));
+    margin-inline: auto;
+  }
+
+  /* SYNAPSE lists five chapters, so its contents need one more 44px row */
+  [data-case-study="synapse"] .cs-aside {
+    --aside-reserve: 29rem;
+  }
+}
+
+/* ---------- Contents, grouped by chapter ---------- */
+.cs-toc > ol {
+  display: grid;
+  gap: var(--s-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-left: 0;
+}
+
+.cs-toc__chapter + .cs-toc__chapter {
+  margin-top: 0;
+}
+
+.cs-toc__name {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  margin-bottom: var(--s-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.cs-toc .cs-toc__name {
+  min-height: 44px;
+  margin-left: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  text-decoration: none;
+}
+
+.cs-toc .cs-toc__name:hover {
+  color: var(--text);
+}
+
+.cs-toc__num {
+  display: inline-grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0;
+  color: var(--text);
+}
+
+.cs-toc__chapter ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cs-toc__chapter.is-active .cs-toc__name {
+  color: var(--text);
+}
+
+.cs-toc__chapter.is-active .cs-toc__num {
+  border-color: var(--why);
+  color: var(--why);
+}
+
+@media (min-width: 64rem) {
+  /* The 44px rows carry their own spacing */
+  .cs-toc > ol {
+    gap: 0;
+  }
+
+  .cs-toc__chapter ol {
+    border-left: 1px solid var(--border);
+    margin-left: 9px;
+  }
+
+  .cs-toc__chapter ol a {
+    padding-block: 0.3rem;
+    font-size: var(--fs-xs);
+  }
+
+  /* With JavaScript, only the active chapter lists its sections */
+  .js .cs-toc__chapter:not(.is-active) ol {
+    display: none;
+  }
+
+  .js .cs-toc__chapter .cs-toc__name {
+    margin-bottom: 0;
+  }
+
+  .js .cs-toc__chapter.is-active .cs-toc__name {
+    margin-bottom: var(--s-2);
+  }
+}
+
+@media (max-width: 63.99rem) {
+  .cs-toc > ol {
+    gap: var(--s-4);
+  }
+
+  .cs-toc__chapter ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-2);
+  }
+
+  .cs-toc__chapter ol li + li {
+    margin-top: 0;
+  }
+}
+
+/* ---------- Chapters ---------- */
+.chapter {
+  scroll-margin-top: calc(var(--header-h) + var(--s-8));
+}
+
+.chapter + .chapter {
+  margin-top: clamp(4rem, 3rem + 4vw, 7rem);
+}
+
+.chapter__label {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  margin: 0 0 var(--s-8);
+  padding-bottom: var(--s-4);
+  border-bottom: 1px solid var(--border-strong);
+  font-size: var(--fs-2xl);
+  font-weight: 720;
+  font-stretch: 118%;
+  line-height: 1;
+  letter-spacing: -0.025em;
+}
+
+.chapter__num {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1.5px solid var(--why);
+  border-radius: 50%;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  font-stretch: 100%;
+  letter-spacing: 0;
+  color: var(--why);
+}
+
+.chapter__figure {
+  max-width: 20rem;
+  margin: 0 0 var(--s-10);
+  padding: var(--s-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: radial-gradient(80% 70% at 50% 35%, #16222f 0%, var(--stage-bg) 80%);
+  color-scheme: dark;
+  --surface: #131a23;
+  --text: #e9eef4;
+  --text-muted: #9aa6b4;
+  --text-faint: #8a96a5;
+  --border-strong: rgba(233, 238, 244, 0.3);
+  --why: #f2a33a;
+  --how: #79b4e6;
+}
+
+@media (min-width: 64rem) {
+  .chapter__figure { display: none; }
+}
+
+.chapter .cs-section {
+  max-width: none;
+}
+
+.chapter .cs-section + .cs-section {
+  margin-top: var(--s-12);
+}
+
+/* Three-way splits read better stacked inside the chapter column */
+.chapter .split--3 {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 48rem) {
+  .chapter .split--3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .chapter .split--3 > :first-child {
+    grid-row: span 2;
+  }
+}
+
+/* ---------- Next case (stage) ---------- */
+.cs-next {
+  padding-block: clamp(4rem, 3rem + 5vw, 7rem);
+  background:
+    radial-gradient(55% 80% at 82% 0%, #132030 0%, rgba(19, 32, 48, 0) 70%),
+    var(--stage-bg);
+}
+
+.cs-next .container {
+  max-width: var(--container-wide);
+}
+
+.cs-next .card {
+  max-width: 44rem;
+  height: auto;
+}
+
+.cs-next .card__title {
+  font-size: var(--fs-xl);
+}
+
+.cs-next .text-link {
+  margin-top: var(--s-6);
+}
+
+.page-case .site-footer {
+  margin-top: 0;
+  border-top: 1px solid var(--border);
+}
+
+/* ---------- Print ---------- */
+@media print {
+  .chapter-bar,
+  .cs-aside__visual,
+  .chapter__figure,
+  .cs-visual {
+    display: none !important;
+  }
+}
