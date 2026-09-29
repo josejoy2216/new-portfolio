@@ -2,7 +2,7 @@
    otherwise shows a still poster rendered from the same scene.
    The page is complete without this file. */
 
-const V = '20260927';
+const V = '20260929';
 const art = document.querySelector('[data-exploded-view]');
 
 if (art) {

@@ -3,10 +3,9 @@
    edits to this browser's localStorage, and exports through a print-ready
    window (browser print → Save as PDF).
 
-   Every value in resumeData comes from the site's facts ledger (IDs in the
-   comments) and mirrors /resume.html. Keep the two in sync, and bump
-   DATA_VERSION whenever resumeData changes so saved drafts are flagged as
-   older. No phone number, by design. */
+   Every value in resumeData mirrors /resume.html. Keep the two in sync, and
+   bump DATA_VERSION whenever resumeData changes so saved drafts are flagged
+   as older. No phone number, by design. */
 (function () {
   'use strict';
 
@@ -17,55 +16,55 @@
   /* ---------- Data ---------- */
   var resumeData = {
     basics: {
-      name: 'Jose Chacko', // ID-1
-      headline: 'Assistant Manager – Web Developer, PPFAS · Developer by background, product thinker by instinct', // ID-2 ID-9
-      location: 'Mumbai, India', // ID-3
-      email: 'josejoy2216@gmail.com', // ID-4
-      website: 'https://josechacko.com', // ID-8
-      linkedin: 'https://www.linkedin.com/in/josejoychacko/', // ID-5
-      github: 'https://github.com/josejoy2216' // ID-6
+      name: 'Jose Chacko',
+      headline: 'Assistant Manager – Web Developer, PPFAS · Developer by background, product thinker by instinct',
+      location: 'Mumbai, India',
+      email: 'josejoy2216@gmail.com',
+      website: 'https://josechacko.com',
+      linkedin: 'https://www.linkedin.com/in/josejoychacko/',
+      github: 'https://github.com/josejoy2216'
     },
 
     summary: [
-      'Assistant Manager – Web Developer at PPFAS, building business-critical websites, portals, an investment platform and internal systems.', // ID-2 ID-P1
-      'Saved ₹20+ lakh in fixed costs, combined across seven builds, and ₹10+ lakh in annual recurring cost, attributed jointly to an event-management system and a Career portal.', // ID-P5 ID-P6 ID-P26
-      'Built two prototypes: SYNAPSE, an AI SaaS product prototype for LinkedIn personal branding (not deployed, no users), and SignBridge, an accessibility research prototype that maps speech in a video to a sequence of Indian Sign Language concepts.', // ID-Y1 ID-Y2 ID-B1 ID-B2
-      'Currently enrolled in the PPM-AI program (Masai School × IIT Roorkee) and exploring Associate Product Manager and Product Manager roles.' // ID-E3 ID-10
+      'Assistant Manager – Web Developer at PPFAS, building business-critical websites, portals, an investment platform and internal systems.',
+      'Saved ₹20+ lakh in fixed costs, combined across seven builds, and ₹10+ lakh in annual recurring cost, attributed jointly to an event-management system and a Career portal.',
+      'Built two prototypes: SYNAPSE, an AI SaaS product prototype for LinkedIn personal branding (not deployed, no users), and SignBridge, an accessibility research prototype that maps speech in a video to a sequence of Indian Sign Language concepts.',
+      'Currently enrolled in the Certification in Product Management with Applied AI Program (iHUB DivyaSampark, IIT Roorkee, with Masai School) and exploring Associate Product Manager and Product Manager roles.'
     ],
 
     experience: [
       {
-        title: 'Assistant Manager – Web Developer', // ID-2
-        company: 'PPFAS', // ID-2
-        location: 'Mumbai, India', // ID-2
-        dates: 'Apr 2026 – Present', // ID-2 ID-P14
-        earlier: 'At PPFAS since Oct 2024: Web Designer (Oct 2024 – Mar 2025), Executive – Web Developer (Apr 2025 – Mar 2026)', // ID-P14
+        title: 'Assistant Manager – Web Developer',
+        company: 'PPFAS',
+        location: 'Mumbai, India',
+        dates: 'Apr 2026 – Present',
+        earlier: 'At PPFAS since Oct 2024: Web Designer (Oct 2024 – Mar 2025), Executive – Web Developer (Apr 2025 – Mar 2026)',
         highlights: [
-          'Built static pages and management portals that reduced dependency on the tech team; ₹20+ lakh in fixed costs saved, combined across seven builds.', // ID-P5
-          'Built an event-management system (QR scanning and door list) and a Career portal; ₹10+ lakh in annual recurring cost saved, attributed jointly to the two.', // ID-P6 ID-P18 ID-P26
-          'Built and launched gift.ppfas.com and wealth.ppfas.com, and built the separate PPFAS Gift investment platform, integrated with a third-party payment gateway, with international payment support.', // ID-P3 ID-P7 ID-P25
-          'Created a management portal for amc.ppfas.com covering backend-managed website workflows, job portal features and related internal portals.', // ID-P4
-          'Built a compliance and QC backend portal for uploads and staff management.', // ID-P8
-          'Designed website layouts and email templates in Figma and Photoshop before implementation. Stack: Laravel, React, PHP, WordPress, AWS, CI/CD-driven deployment workflows.' // ID-P9 ID-P2
+          'Built static pages and management portals that reduced dependency on the tech team; across seven builds, the combined fixed-cost saving is ₹20+ lakh.',
+          'Built an event-management system (QR scanning and door list) and a Career portal; ₹10+ lakh in annual recurring cost saved, attributed jointly to the two.',
+          'Built and launched gift.ppfas.com and wealth.ppfas.com, and built the separate PPFAS Gift investment platform, integrated with a third-party payment gateway, with international payment support.',
+          'Created a management portal for amc.ppfas.com covering backend-managed website workflows, job portal features and related internal portals.',
+          'Built a compliance and QC backend portal for uploads and staff management.',
+          'Designed website layouts and email templates in Figma and Photoshop before implementation. Stack: Laravel, React, PHP, WordPress, AWS, CI/CD-driven deployment workflows.'
         ]
       },
       {
-        title: 'Professional Software Developer', // ID-A1
-        company: 'Akbar Travels', // ID-A1
-        dates: 'Feb 2024 – Sep 2024', // ID-A1
+        title: 'Professional Software Developer',
+        company: 'Akbar Travels',
+        dates: 'Feb 2024 – Sep 2024',
         highlights: [
-          'Full-stack delivery across React, Express, Node.js, MongoDB, MySQL, Firebase and Java, with a web development focus centred on JavaScript.', // ID-A2
-          'Delivered work across web, real-time and data-driven use cases.' // ID-A3
+          'Full-stack delivery across React, Express, Node.js, MongoDB, MySQL, Firebase and Java, with a web development focus centred on JavaScript.',
+          'Delivered work across web, real-time and data-driven use cases.'
         ]
       },
       {
-        title: 'Data Analyst and Billing', // ID-M1
-        company: 'Mansha Distributors LLP', // ID-M1
-        dates: 'Jun 2021 – May 2022', // ID-M1
+        title: 'Data Analyst and Billing',
+        company: 'Mansha Distributors LLP',
+        dates: 'Jun 2021 – May 2022',
         highlights: [
-          'Implemented pricing strategies that increased net profit by 150%, from INR 100,000 to INR 250,000.', // ID-M3
-          'Handled pricing, billing and sales-support analysis to improve business decisions and operational performance.', // ID-M2
-          'Managed product suggestions and sales-force optimization.' // ID-M4
+          'Implemented pricing strategies that increased net profit by 150%, from INR 100,000 to INR 250,000.',
+          'Handled pricing, billing and sales-support analysis to improve business decisions and operational performance.',
+          'Managed product suggestions and sales-force optimization.'
         ]
       }
     ],
@@ -74,96 +73,81 @@
     // either project (not public, not deployed).
     projects: [
       {
-        title: 'SYNAPSE: an AI SaaS product prototype for LinkedIn personal branding', // ID-Y1
-        category: 'Full-stack AI prototype', // ID-Y1 ID-Y2
-        shortDescription: 'Surfaces trending topics in a user’s niche and drafts three LinkedIn post variations in the user’s voice; nothing is posted without the user’s explicit action.', // ID-Y1 ID-Y5 ID-Y18
-        problem: 'Showing up consistently on LinkedIn without spending hours on content.', // ID-Y21
-        role: 'Built the SYNAPSE prototype hands-on, using Claude Code as an AI coding assistant', // approved role line (Jose, 2026-09-28); never a sole-creator claim
-        status: 'Prototype, not deployed', // ID-Y17
-        technologies: ['Next.js', 'React', 'NestJS', 'PostgreSQL', 'Prisma', 'Redis', 'Docker', 'GitHub Actions'], // ID-Y2
+        title: 'SYNAPSE: an AI SaaS product prototype for LinkedIn personal branding',
+        category: 'Full-stack AI prototype',
+        shortDescription: 'Surfaces trending topics in a user’s niche and drafts three LinkedIn post variations in the user’s voice; nothing is posted without the user’s explicit action.',
+        problem: 'Showing up consistently on LinkedIn without spending hours on content.',
+        role: 'Built the SYNAPSE prototype hands-on, using Claude Code as an AI coding assistant',
+        status: 'Prototype, not deployed',
+        technologies: ['Next.js', 'React', 'NestJS', 'PostgreSQL', 'Prisma', 'Redis', 'Docker', 'GitHub Actions'],
         outcomes: [
-          'Built a full-stack prototype that surfaces trending topics in a user’s niche from Hacker News, Google News and LinkedIn hashtag feeds, and drafts three LinkedIn post variations in the user’s voice with OpenAI, Gemini or Claude.', // ID-Y1 ID-Y4 ID-Y5 ID-Y10
-          'Built an approval-first flow (nothing is posted without an explicit user action), style learning from the user’s own edits to AI drafts, multi-provider support, bring-your-own API keys (stored encrypted) and per-plan monthly token limits.', // ID-Y18 ID-Y9 ID-Y10
-          'LinkedIn publishing, scheduling, Razorpay subscriptions and the daily email digest are implemented but not verified live, and there are no automated tests.' // ID-Y12 ID-Y13 ID-Y14 ID-Y17
+          'Built a full-stack prototype that surfaces trending topics in a user’s niche from Hacker News, Google News and LinkedIn hashtag feeds, and drafts three LinkedIn post variations in the user’s voice with OpenAI, Gemini or Claude.',
+          'Built an approval-first flow (nothing is posted without an explicit user action), style learning from the user’s own edits to AI drafts, multi-provider support, bring-your-own API keys (stored encrypted) and per-plan monthly token limits.',
+          'LinkedIn publishing, scheduling, Razorpay subscriptions and the daily email digest are implemented but not verified live, and there are no automated tests.'
         ],
         caseStudyUrl: 'https://josechacko.com/case-studies/synapse.html',
-        dates: 'May – Jun 2026', // ledger: work dated May–June 2026 (ID-Y23)
-        tags: ['AI', 'LinkedIn', 'Content workflow', 'Full stack'] // ID-Y1 ID-Y2
+        dates: 'May – Jun 2026',
+        tags: ['AI', 'LinkedIn', 'Content workflow', 'Full stack']
       },
       {
-        title: 'SignBridge: spoken video to a sequence of Indian Sign Language concepts', // ID-B1
-        category: 'Accessibility research prototype', // ID-B1 ID-B2
-        shortDescription: 'Transcribes a spoken video, translates its meaning into a sequence of sign-language concepts and plays the signs back in sync with the video.', // ID-B1
-        problem: 'Spoken video content is not automatically available in sign-language form, and captions are not the same thing as sign language.', // ID-B4
-        role: 'Personal project', // ledger: single author (Jose)
-        status: 'Research prototype', // ID-B2
-        technologies: ['Python', 'FastAPI', 'faster-whisper', 'FFmpeg', 'React', 'three.js', 'MediaPipe'], // ID-B5 ID-B10
+        title: 'SignBridge: mapping spoken video to a sequence of Indian Sign Language concepts',
+        category: 'Accessibility research prototype',
+        shortDescription: 'Transcribes a spoken video, maps its meaning to a sequence of sign-language concepts and plays the signs back in sync with the video.',
+        problem: 'Spoken video content is not automatically available in sign-language form, and captions are not the same thing as sign language.',
+        role: 'Built the SignBridge prototype hands-on, using Claude Code as an AI coding assistant',
+        status: 'Research prototype',
+        technologies: ['Python', 'FastAPI', 'faster-whisper', 'FFmpeg', 'React', 'three.js', 'MediaPipe'],
         outcomes: [
-          'Built a weekend-scale MVP to test technical feasibility: it transcribes a spoken video, maps its meaning to a sequence of sign-language concepts and plays the signs back in sync with the video (2 of 209 vocabulary entries are real ISL clips).', // ID-B1 ID-B2 ID-B5 ID-B8
-          'In a separate research track, retargeted real ISL motion (MediaPipe landmarks) onto a rigged three.js avatar; an analytical two-bone IK correction cut mean wrist trajectory error by roughly 85% on a HELLO clip versus the earlier clamp-based approach (0.2405 to 0.0354 of arm length); a later arm-clipping fix raised it to 0.0665.', // ID-B10 ID-B11 ID-B17
-          'Documented the limits: on FRIEND, a sign with hand-to-hand contact, right-hand tracking fell to 34% of frames (77% on HELLO), and translations have not been reviewed by a qualified ISL interpreter.' // ID-B13 ID-B3
+          'Built a weekend-scale MVP to test technical feasibility: it transcribes a spoken video, maps its meaning to a sequence of sign-language concepts and plays the signs back in sync with the video (2 of 209 vocabulary entries are real ISL clips).',
+          'In a separate research track, retargeted real ISL motion (MediaPipe landmarks) onto a rigged three.js avatar; an analytical two-bone IK correction cut mean wrist trajectory error by roughly 85% on a HELLO clip versus the earlier clamp-based approach (0.2405 to 0.0354 of arm length); a later arm-clipping fix raised it to 0.0665.',
+          'Documented the limits: in local, uncommitted research on FRIEND, a sign with hand-to-hand contact, right-hand tracking fell to 34% of frames (77% on HELLO); translations have not been reviewed by a qualified ISL interpreter.'
         ],
         caseStudyUrl: 'https://josechacko.com/case-studies/signbridge.html',
-        dates: 'Aug 2026', // ledger: commits 2026-08-08 … 2026-08-09
-        tags: ['Accessibility', 'Indian Sign Language', 'Speech pipeline', 'Motion retargeting'] // ID-B1 ID-B5 ID-B10
+        dates: 'Aug 2026',
+        tags: ['Accessibility', 'Indian Sign Language', 'Speech pipeline', 'Motion retargeting']
       }
     ],
 
-    earlierSummary: 'Earlier: Book Nook (MERN e-commerce app for books) and a real-time multiplayer Mafia game.', // ID-X1 ID-X2 (same wording as /resume.html)
+    earlierSummary: 'Earlier: Book Nook (MERN e-commerce app for books) and a real-time multiplayer Mafia game.',
 
     earlierProjects: [
       {
-        title: 'Book Nook', // ID-X1 (display name used by the app's own UI)
+        title: 'Book Nook',
         shortDescription: 'MERN e-commerce app for books',
         technologies: ['React', 'Node.js', 'MongoDB', 'Firebase'],
         githubUrl: 'https://github.com/josejoy2216/Ecommerce'
       },
       {
-        title: 'Mafia', // ID-X2
+        title: 'Mafia',
         shortDescription: 'real-time multiplayer game',
         technologies: ['React', 'Node.js', 'MongoDB', 'Socket.IO'],
         githubUrl: 'https://github.com/josejoy2216/mafia/'
-      },
-      {
-        title: 'Movie Recommendation System', // ID-X3
-        held: true, // not shown: ownership/originality unresolved (Jose, 2026-09-27)
-        shortDescription: 'content-based, with sentiment analysis on user reviews',
-        technologies: ['Python'],
-        projectUrl: 'https://josejoy2216.github.io/Movie-Recommendation-System-with-Sentiment-Analysis/'
       }
     ],
 
     skills: [
-      // ID-S4 with its evidence: ID-B2 ID-P9 ID-P5 ID-P10 ID-Y17 ID-B8 ID-B17
       { label: 'Product practice', text: 'scoping a weekend-scale MVP around one feasibility question (SignBridge); designing before building (PPFAS); building workflow tools that reduce dependency on a tech team (PPFAS); documenting limitations (SignBridge, SYNAPSE); keeping a visually correct fix even when it worsened the evaluation metric (SignBridge).' },
-      // ID-S1
       { label: 'Technical', text: 'PHP, Laravel, JavaScript, TypeScript, React, Next.js, Node.js, Express, NestJS, Python, FastAPI, HTML, CSS, WordPress, REST APIs, MySQL, PostgreSQL, MongoDB, Firebase, Prisma, Redis, AWS, CI/CD, Git/GitHub, three.js, MediaPipe.' },
-      // ID-S2 ID-P9
       { label: 'Design and tools', text: 'Figma, Photoshop (website layouts and email templates).' },
-      // ID-S3
       { label: 'Data and analysis', text: 'pricing and billing analysis (Mansha Distributors); quantitative evaluation of experiments (SignBridge); Google Data Analytics certificate.' }
     ],
 
     education: [
-      // ID-E3: currently enrolled, no dates. Program name as on /resume.html.
-      { degree: 'PPM-AI program', institution: 'Masai School × IIT Roorkee', dates: 'Currently enrolled' },
-      // ID-E1
+      { degree: 'Certification in Product Management with Applied AI Program', institution: 'iHUB DivyaSampark, IIT Roorkee (with Masai School)', dates: 'Currently enrolled' },
       { degree: 'Master of Computer Applications (MCA)', institution: 'Thakur Institute of Management Studies, Career Development & Research (TIMSCDR)', dates: '2022 – 2024', grade: 'CGPA 7.83 / 10' },
-      // ID-E2
       { degree: 'Bachelor of Science in Computer Science', institution: 'Thakur Ramnarayan College of Arts & Commerce', dates: '2018 – 2021', grade: 'CGPA 8.65 / 10' }
     ],
 
     certifications: [
-      { name: 'NISM Series V-A Certification' }, // ID-C1
-      { name: 'Google Data Analytics', issuer: 'Coursera / Google' }, // ID-C2
-      { name: 'Google Cloud', issuer: 'Google', year: '2022' }, // ID-C3
-      { name: 'Programming using JavaScript', issuer: 'Microsoft', year: '2020' }, // ID-C4
-      { name: 'Programming in Java', issuer: 'NPTEL' }, // ID-C5
-      { name: 'Cross-Platform Mobile App Development', issuer: 'Microsoft' }, // ID-C6
-      { name: 'Java Certification and RDBMS PostgreSQL', issuer: 'Spoken Tutorial Project, IIT Bombay' } // ID-C7
+      { name: 'NISM Series V-A Certification' },
+      { name: 'Google Data Analytics', issuer: 'Coursera / Google' },
+      { name: 'Google Cloud', issuer: 'Google', year: '2022' },
+      { name: 'Programming using JavaScript', issuer: 'Microsoft', year: '2020' },
+      { name: 'Programming in Java', issuer: 'NPTEL' },
+      { name: 'Cross-Platform Mobile App Development', issuer: 'Microsoft' },
+      { name: 'Java Certification and RDBMS PostgreSQL', issuer: 'Spoken Tutorial Project, IIT Bombay' }
     ],
 
-    // ID-L1
     activities: 'Developed leadership through fest, NSS and coaching responsibilities; built communication and presentation skills.'
   };
 

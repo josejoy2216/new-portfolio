@@ -6,9 +6,9 @@
 import {
   clamp, lerp3, perspective, lookAt, multiply, LINE_VS, LINE_FS, POINT_VS, POINT_FS,
   getContext, program, lineGroup, pointGroup, rgba, pushLine, pushPoint, fitCanvas
-} from './core.js?v=20260927';
+} from './core.js?v=20260929';
 
-const DATA_URL = '/assets/data/sign-motion.json?v=20260927';
+const DATA_URL = '/assets/data/sign-motion.json?v=20260929';
 const BODY = [0.93, 0.87, 0.8];
 const LEFT = [0.95, 0.7, 0.35];
 const RIGHT = [1.0, 0.56, 0.44];

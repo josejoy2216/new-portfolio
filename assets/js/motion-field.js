@@ -2,7 +2,7 @@
    they come near the viewport. Without JavaScript, WebGL or with Save-Data on,
    the host's still image and tracking strip stay as they are. */
 
-const V = '20260927';
+const V = '20260929';
 const hosts = document.querySelectorAll('[data-sign-motion]');
 const saveData = !!(navigator.connection && navigator.connection.saveData);
 

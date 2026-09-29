@@ -8,7 +8,7 @@ import {
   clamp, easeOutExpo, easeInOut, lerp3, perspective, fitFov, lookAt, multiply, project,
   seededRandom, LINE_VS, LINE_FS, POINT_VS, POINT_FS, getContext, program, lineGroup,
   pointGroup, quad, rgba, pushLine, pushPoint, fitCanvas
-} from './core.js?v=20260927';
+} from './core.js?v=20260929';
 
 const PLANE_VS = `#version 300 es
 precision highp float;

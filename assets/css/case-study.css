@@ -49,6 +49,9 @@
 .pp-row { opacity: var(--pp-rowdim); }
 .pp-row--fixed,
 .pp-row--recurring { opacity: 1; }
+/* The DEPENDENCY label is shown or hidden, never faded, so it keeps its contrast (the dashed link still fades) */
+.pp g[style*="--pp-loop"] > text { opacity: var(--pp-loop-label, 1); }
+.pp[data-state="2"], .pp[data-state="3"], .pp[data-state="4"] { --pp-loop-label: 0; }
 .dia .d-title--sm { font-size: 10.75px; letter-spacing: -0.005em; }
 .dia .d-save { stroke: var(--why); }
 
@@ -79,9 +82,40 @@
 /* 3 Execution: the whole system as the committed code shows it */
 .sy[data-state="3"] { --sy-niche: 1; --sy-flow: 1; --sy-approve: 1; --sy-post: 1; --sy-voice: 1; --sy-access: 1; --sy-biz: 1; --sy-tag: 0.5; --sy-out: 0; }
 /* 4 Iteration: publishing, scheduling, the own-key rule and the missing permission */
-.sy[data-state="4"] { --sy-niche: 0.3; --sy-flow: 0.35; --sy-approve: 1; --sy-post: 1; --sy-voice: 0.3; --sy-access: 1; --sy-biz: 0.35; --sy-tag: 1; --sy-out: 0.35; }
+.sy[data-state="4"] { --sy-niche: 0.3; --sy-flow: 0.35; --sy-approve: 1; --sy-post: 1; --sy-voice: 0.3; --sy-access: 1; --sy-biz: 0.35; --sy-tag: 1; --sy-out: 1; }
 /* 5 Impact: what exists, and what is not proven */
 .sy[data-state="5"] { --sy-niche: 0.6; --sy-flow: 0.6; --sy-approve: 0.6; --sy-post: 0.6; --sy-voice: 0.6; --sy-access: 0.6; --sy-biz: 0.6; --sy-tag: 1; --sy-out: 1; }
+
+/* SignBridge two-track diagram: the app pipeline and the isolated research.
+   Free-standing labels (the uncommitted tag, the readout) are shown or hidden, never faded, so they keep their contrast. */
+@property --sb-in { syntax: "<number>"; inherits: true; initial-value: 1; }
+@property --sb-app { syntax: "<number>"; inherits: true; initial-value: 1; }
+@property --sb-assets { syntax: "<number>"; inherits: true; initial-value: 1; }
+@property --sb-play { syntax: "<number>"; inherits: true; initial-value: 1; }
+@property --sb-res { syntax: "<number>"; inherits: true; initial-value: 1; }
+@property --sb-signs { syntax: "<number>"; inherits: true; initial-value: 1; }
+@property --sb-friend { syntax: "<number>"; inherits: true; initial-value: 1; }
+@property --sb-unc { syntax: "<number>"; inherits: true; initial-value: 1; }
+@property --sb-out { syntax: "<number>"; inherits: true; initial-value: 1; }
+
+.sb {
+  --sb-in: 1; --sb-app: 1; --sb-assets: 1; --sb-play: 1; --sb-res: 1; --sb-signs: 1; --sb-friend: 1; --sb-unc: 1; --sb-out: 1;
+  transition:
+    --sb-in 0.7s var(--ease-settle), --sb-app 0.7s var(--ease-settle), --sb-assets 0.7s var(--ease-settle),
+    --sb-play 0.7s var(--ease-settle), --sb-res 0.7s var(--ease-settle), --sb-signs 0.7s var(--ease-settle),
+    --sb-friend 0.7s var(--ease-settle), --sb-unc 0.7s var(--ease-settle), --sb-out 0.7s var(--ease-settle);
+}
+
+/* 1 Problem: a spoken video in, synced signs out; not validated */
+.sb[data-state="1"] { --sb-in: 1; --sb-app: 0.35; --sb-assets: 0.5; --sb-play: 1; --sb-res: 0.15; --sb-signs: 0.15; --sb-friend: 0.15; --sb-unc: 0; --sb-out: 1; }
+/* 2 Thinking: the MVP scope; the avatar was a non-goal */
+.sb[data-state="2"] { --sb-in: 1; --sb-app: 1; --sb-assets: 1; --sb-play: 1; --sb-res: 0.2; --sb-signs: 0.2; --sb-friend: 0.1; --sb-unc: 0; --sb-out: 1; }
+/* 3 Execution: both tracks */
+.sb[data-state="3"] { --sb-in: 1; --sb-app: 1; --sb-assets: 1; --sb-play: 1; --sb-res: 1; --sb-signs: 1; --sb-friend: 1; --sb-unc: 1; --sb-out: 1; }
+/* 4 Iteration: the research track, where the limit appeared */
+.sb[data-state="4"] { --sb-in: 0.3; --sb-app: 0.3; --sb-assets: 0.45; --sb-play: 0.3; --sb-res: 1; --sb-signs: 1; --sb-friend: 1; --sb-unc: 1; --sb-out: 1; }
+/* 5 Impact: what was shown, and what was not */
+.sb[data-state="5"] { --sb-in: 0.55; --sb-app: 0.55; --sb-assets: 1; --sb-play: 0.55; --sb-res: 0.6; --sb-signs: 1; --sb-friend: 1; --sb-unc: 1; --sb-out: 1; }
 
 .cs-visual .status-key {
   justify-content: center;
@@ -265,7 +299,8 @@
   }
 
   /* SYNAPSE lists five chapters, so its contents need one more 44px row */
-  [data-case-study="synapse"] .cs-aside {
+  [data-case-study="synapse"] .cs-aside,
+  [data-case-study="signbridge"] .cs-aside {
     --aside-reserve: 29rem;
   }
 }

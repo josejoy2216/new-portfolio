@@ -1514,6 +1514,7 @@ main:focus {
 .dia .d-dash { stroke-dasharray: 6 4; }
 .dia .d-ghost { stroke-dasharray: 1.5 3.5; }
 .dia .d-dashdot { stroke-dasharray: 7 3 1.5 3; }
+.dia .d-frame { fill: none; stroke: var(--border-strong); stroke-width: 1.2; stroke-dasharray: 6 4; }
 .dia .d-warn { fill: var(--why); letter-spacing: 0.06em; }
 .dia .d-read { fill: var(--text); letter-spacing: 0.06em; }
 .dia .d-fade { opacity: 0.6; }
@@ -2946,6 +2947,26 @@ main:focus {
 .iter > li.is-partial::before { border-color: var(--why); background: linear-gradient(90deg, var(--why) 50%, var(--bg) 50%); }
 .iter > li.is-failed::before { border-color: var(--fail-text); background: var(--bg); }
 
+/* Uncommitted research: kept visibly apart from the committed stages */
+.iter__group {
+  margin: 0 0 var(--s-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.callout--uncommitted {
+  border-style: dashed;
+}
+
+.iter--uncommitted {
+  padding: var(--s-4);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius);
+}
+
 .iter__head {
   display: flex;
   flex-wrap: wrap;
@@ -3630,6 +3651,38 @@ main:focus {
   .hero__canvas,
   .hero__callouts {
     display: none;
+  }
+
+  /* The decorative grid would run through text once backgrounds are removed */
+  .hero__grid {
+    display: none !important;
+  }
+
+  /* Diagrams in system colours; statuses stay readable from their line styles and words */
+  .dia .d-node,
+  .dia .d-soft {
+    fill: Canvas;
+    stroke: CanvasText;
+  }
+
+  .dia text,
+  .dia .d-title,
+  .dia .d-big,
+  .dia .d-warn,
+  .dia .d-read,
+  .dia .d-head {
+    fill: CanvasText;
+  }
+
+  .dia .d-edge,
+  .dia .d-frame,
+  .dia .d-save {
+    stroke: CanvasText;
+  }
+
+  .status-key__inc::before {
+    forced-color-adjust: none;
+    background: repeating-linear-gradient(90deg, CanvasText 0 7px, transparent 7px 10px, CanvasText 10px 11.5px, transparent 11.5px 14.5px);
   }
 }
 

@@ -33,9 +33,18 @@
 }
 
 @media (min-width: 64rem) and (min-height: 46rem) {
+  /* Taller than most screens, so while sticky the panel scrolls itself; every control stays reachable */
   .rb__panel {
     position: sticky;
     top: calc(var(--header-h) + var(--s-6));
+    max-height: calc(100vh - var(--header-h) - var(--s-12));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  /* The panel is a flex column: keep each item at its natural height so the panel scrolls instead of squeezing them */
+  .rb__panel > * {
+    flex-shrink: 0;
   }
 }
 
